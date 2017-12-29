@@ -10,11 +10,11 @@ Ogni sottocartella è composta da un file di estensione **ino** che contiene il 
 **src** che contiene le librerie utilizzate dal programma.
 
 Le librerie presenti sono:
--**comlib** : libreria che gestisce la comunicazione fra i vari microcontrollori.\n
--**motlib** : libreria che contiene algoritmi per i motori.\n
--**sreglib** : libreria per la gestione dello _shift register_.\n
--**strlib** : libreria per la manipolazione di stringhe.\n
--**veclib** : liberia per la manipolazione di vettori e matrici.\n\n
+-**comlib** : libreria che gestisce la comunicazione fra i vari microcontrollori.<p>
+-**motlib** : libreria che contiene algoritmi per i motori.<p>
+-**sreglib** : libreria per la gestione dello _shift register_.<p>
+-**strlib** : libreria per la manipolazione di stringhe.<p>
+-**veclib** : liberia per la manipolazione di vettori e matrici.<p>
 
 ### Hardware
 La sottocartella **drawings** contiene i disegni tecnici relativi alla struttura del robot.
