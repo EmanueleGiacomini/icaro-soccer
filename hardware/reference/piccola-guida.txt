@@ -1,2 +1,5 @@
-Da inserire:
--Riferimenti vari per idee
+Motor Driver VNH5019
+Teensy
+Solinoide (Facoltativo)
+VL6180 Distanza laser
+Sensori di lienea (Foto transistor/led)
