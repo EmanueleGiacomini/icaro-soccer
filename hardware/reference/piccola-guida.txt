@@ -7,4 +7,5 @@ Micro SD (Facoltativo)
 Display (Facoltativo)
 raspberry (Facoltativo)
 Modulo bluetooth
-Regolatore di trnsione
+Regolatore di trnsione D24V10F3 Pololu
+7300-PIXYCAM
