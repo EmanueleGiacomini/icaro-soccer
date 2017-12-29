@@ -6,3 +6,5 @@ Sensori di lienea (Foto transistor/led)
 Micro SD (Facoltativo)
 Display (Facoltativo)
 raspberry (Facoltativo)
+Modulo bluetooth
+Regolatore di trnsione
