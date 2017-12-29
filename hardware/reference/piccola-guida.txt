@@ -3,3 +3,6 @@ Teensy
 Solenoide (Facoltativo)
 VL6180 Distanza laser
 Sensori di lienea (Foto transistor/led)
+Micro SD (Facoltativo)
+Display (Facoltativo)
+raspberry (Facoltativo)
