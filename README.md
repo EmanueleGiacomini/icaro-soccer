@@ -9,7 +9,7 @@ Entrambe le sottocartelle di software e hardware contengono una cartella **_refe
 Ogni sottocartella è composta da un file di estensione **ino** che contiene il programma da inserire in Arduino, e da una cartella
 **src** che contiene le librerie utilizzate dal programma.
 
-Le librerie presenti sono:
+Le librerie presenti sono:<p>
 -**comlib** : libreria che gestisce la comunicazione fra i vari microcontrollori.<p>
 -**motlib** : libreria che contiene algoritmi per i motori.<p>
 -**sreglib** : libreria per la gestione dello _shift register_.<p>
