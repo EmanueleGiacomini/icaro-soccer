@@ -9,3 +9,4 @@ raspberry (Facoltativo)
 Modulo bluetooth
 Regolatore di trnsione D24V10F3 Pololu
 7300-PIXYCAM
+Bussola
