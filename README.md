@@ -8,8 +8,6 @@ Entrambe le sottocartelle di software e hardware contengono una cartella **_refe
 ### Software
 Ogni sottocartella è composta da un file di estensione **ino** che contiene il programma da inserire in Arduino, e da una cartella
 **src** che contiene le librerie utilizzate dal programma.
-<<<<<<< Updated upstream
-=======
 
 Le librerie presenti sono:<p>
 -**comlib** : libreria che gestisce la comunicazione fra i vari microcontrollori.<p>
@@ -18,7 +16,6 @@ Le librerie presenti sono:<p>
 -**strlib** : libreria per la manipolazione di stringhe.<p>
 -**veclib** : liberia per la manipolazione di vettori e matrici.<p>
 
->>>>>>> Stashed changes
 ### Hardware
 La sottocartella **drawings** contiene i disegni tecnici relativi alla struttura del robot.
 **electronics** conterrà i disegni relativi ai circuiti stampati realizzati con EAGLE.
