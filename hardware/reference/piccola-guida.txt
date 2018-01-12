@@ -10,4 +10,4 @@ Modulo bluetooth
 Regolatore di trnsione D24V10F3 Pololu(Teensy,led,sensori...)
 7300-PIXYCAM
 Bussola Adafruit BNO055
-Regolatore di trnsione D24V22F3(Sensori linea)
+Regolatore di tensione D24V22F3(Sensori linea)
