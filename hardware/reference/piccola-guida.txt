@@ -1,5 +1,5 @@
 Motor Driver VNH5019
-Teensy
+Teensy 3.2
 Solenoide (Facoltativo)
 VL6180 Distanza laser
 Sensori di lienea (Foto transistor/led)
