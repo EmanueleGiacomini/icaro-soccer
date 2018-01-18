@@ -8637,7 +8637,7 @@ DIN A3, landscape with location and doc. field</description>
 <plain>
 <wire x1="165.1" y1="251.46" x2="165.1" y2="132.08" width="1.016" layer="97" style="longdash"/>
 <wire x1="165.1" y1="132.08" x2="38.1" y2="132.08" width="1.016" layer="97" style="longdash"/>
-<text x="81.28" y="241.3" size="5.08" layer="97">fototransistor</text>
+<text x="83.82" y="241.3" size="5.08" layer="97">fototransistor</text>
 <text x="187.96" y="241.3" size="5.08" layer="97">led</text>
 <text x="231.14" y="238.76" size="5.08" layer="97">connettore di raggruppo uscite</text>
 <wire x1="165.1" y1="132.08" x2="226.06" y2="132.08" width="1.016" layer="97" style="longdash"/>
