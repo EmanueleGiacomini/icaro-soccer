@@ -28,13 +28,17 @@
 #ifndef veclib_h
 #define veclib_h
 
+int vecScalarMult(int A[], int B[], int dim);
+void vecMult(int A[], int B[], int dim);
+void vecSub(int A[] int B[], int dim);
+void vecSum(int A[] int B[], int dim);
 /*
   Da aggiungere:
   - Funzioni basiche matematiche sui vettori:
     1) Somma  (nome consigliato: vecSum)
     2) Sottrazione  (nome consigliato: vecSub)
     3) Moltiplicazione per un numero  (nome consigliato: vecScalarMult)
-    4) Moltiplicazione fra vettori (un pò complessa)  (nome consigliato: vecMult)
+    4) Moltiplicazione fra vettori (un po' complessa)  (nome consigliato: vecMult)
 */
 
 #endif
