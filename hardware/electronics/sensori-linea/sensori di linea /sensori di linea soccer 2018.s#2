@@ -9459,6 +9459,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="165.1" y1="132.08" x2="226.06" y2="132.08" width="1.016" layer="97" style="longdash"/>
 <wire x1="226.06" y1="132.08" x2="226.06" y2="251.46" width="1.016" layer="97" style="longdash"/>
 <text x="325.12" y="7.62" size="1.778" layer="95">progettato e realizzato da Francesco Spena</text>
+<wire x1="228.6" y1="132.08" x2="226.06" y2="132.08" width="1.016" layer="97" style="longdash"/>
+<wire x1="228.6" y1="132.08" x2="332.74" y2="132.08" width="1.016" layer="97" style="longdash"/>
+<wire x1="332.74" y1="132.08" x2="332.74" y2="251.46" width="1.016" layer="97" style="longdash"/>
 </plain>
 <instances>
 <instance part="T1" gate="1" x="63.5" y="210.82"/>

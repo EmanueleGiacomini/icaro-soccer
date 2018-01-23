@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="8.5.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -8897,6 +8897,7 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="226.06" y1="132.08" x2="226.06" y2="251.46" width="1.016" layer="97" style="longdash"/>
 <wire x1="231.14" y1="177.8" x2="330.2" y2="177.8" width="1.016" layer="97" style="longdash"/>
 <wire x1="330.2" y1="177.8" x2="330.2" y2="251.46" width="1.016" layer="97" style="longdash"/>
+<text x="325.12" y="7.62" size="1.778" layer="103">progettatto e disegnato da Francesco Spena</text>
 </plain>
 <instances>
 <instance part="T1" gate="1" x="63.5" y="210.82"/>
