@@ -15300,6 +15300,111 @@ Based on the following sources:
 </deviceset>
 </devicesets>
 </library>
+<library name="VHN5019">
+<packages>
+<package name="MOTOR-SHIELD">
+<description>Motorshield Hbridge</description>
+<wire x1="-7.62" y1="12.7" x2="-7.62" y2="-15.24" width="0.127" layer="21"/>
+<wire x1="-7.62" y1="-15.24" x2="30.48" y2="-15.24" width="0.127" layer="21"/>
+<wire x1="30.48" y1="-15.24" x2="30.48" y2="12.7" width="0.127" layer="21"/>
+<wire x1="30.48" y1="12.7" x2="-7.62" y2="12.7" width="0.127" layer="21"/>
+<pad name="GND" x="29.21" y="10.16" drill="0.8" shape="square"/>
+<pad name="VOUT" x="29.21" y="7.62" drill="0.8" shape="octagon"/>
+<pad name="GND2" x="29.21" y="5.08" drill="0.8" shape="octagon"/>
+<pad name="VDD" x="29.21" y="2.54" drill="0.8" shape="octagon"/>
+<pad name="INB" x="29.21" y="0" drill="0.8" shape="octagon"/>
+<pad name="ENB/DIAGB" x="29.21" y="-2.54" drill="0.8" shape="octagon"/>
+<pad name="CS" x="29.21" y="-5.08" drill="0.8" shape="octagon"/>
+<pad name="PWM" x="29.21" y="-7.62" drill="0.8" shape="octagon"/>
+<pad name="ENA/DIAGA" x="29.21" y="-10.16" drill="0.8" shape="octagon"/>
+<pad name="INA" x="29.21" y="-12.7" drill="0.8" shape="octagon"/>
+<pad name="GNDMOT-1" x="-5.08" y="-1.27" drill="2.2" shape="square"/>
+<pad name="VMOT-1" x="-5.08" y="3.81" drill="2.2" shape="octagon"/>
+<text x="-5.08" y="15.24" size="1.27" layer="25">&gt;NAME</text>
+<pad name="VMOT-2" x="-6.35" y="5.08" drill="0.8" shape="octagon"/>
+<pad name="VMOT-3" x="-6.35" y="2.54" drill="0.8" shape="octagon"/>
+<pad name="GNDMOT-2" x="-6.35" y="0" drill="0.8" shape="octagon"/>
+<pad name="GNDMOT-3" x="-6.35" y="-2.54" drill="0.8" shape="octagon"/>
+<pad name="INMOT1" x="-5.08" y="-6.35" drill="2.2" shape="octagon"/>
+<pad name="INMOT2" x="-5.08" y="-11.43" drill="2.2" shape="octagon"/>
+<pad name="OUTB-2" x="-6.35" y="-5.08" drill="0.8" shape="octagon"/>
+<pad name="OUTB-3" x="-6.35" y="-7.62" drill="0.8" shape="octagon"/>
+<pad name="OUTA-2" x="-6.35" y="-10.16" drill="0.8" shape="octagon"/>
+<pad name="OUTA-3" x="-6.35" y="-12.7" drill="0.8" shape="octagon"/>
+</package>
+</packages>
+<symbols>
+<symbol name="MOTORSHIELD">
+<description>VNH5019 Motor Driver Carrier</description>
+<wire x1="2.54" y1="15.24" x2="2.54" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-12.7" x2="20.32" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="20.32" y1="-12.7" x2="20.32" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="20.32" y1="-10.16" x2="20.32" y2="12.7" width="0.254" layer="94"/>
+<wire x1="20.32" y1="12.7" x2="20.32" y2="15.24" width="0.254" layer="94"/>
+<wire x1="20.32" y1="15.24" x2="2.54" y2="15.24" width="0.254" layer="94"/>
+<pin name="VMOT" x="25.4" y="7.62" length="middle" direction="sup" rot="R180"/>
+<pin name="GNDM" x="25.4" y="-5.08" length="middle" direction="sup" rot="R180"/>
+<pin name="ENA/DIAGA" x="-2.54" y="-7.62" length="middle"/>
+<pin name="PWM" x="-2.54" y="-5.08" length="middle" direction="in"/>
+<pin name="CS" x="-2.54" y="-2.54" length="middle" direction="out"/>
+<pin name="ENB/DIAGB" x="-2.54" y="0" length="middle"/>
+<pin name="INB" x="-2.54" y="2.54" length="middle" direction="in"/>
+<pin name="VDD" x="-2.54" y="5.08" length="middle" direction="sup"/>
+<pin name="GND2" x="-2.54" y="7.62" length="middle" direction="sup"/>
+<pin name="VOUT" x="-2.54" y="10.16" length="middle" direction="sup"/>
+<pin name="GND" x="-2.54" y="12.7" length="middle" direction="sup"/>
+<pin name="INA" x="-2.54" y="-10.16" length="middle" direction="in"/>
+<text x="5.08" y="17.78" size="1.27" layer="95">&gt;NAME</text>
+<text x="5.08" y="-15.24" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="INMOT2" x="25.4" y="-10.16" length="middle" direction="sup" rot="R180"/>
+<pin name="INMOT1" x="25.4" y="12.7" length="middle" direction="sup" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="VHN5019">
+<description>Operating voltage: 5.5 – 24 V1&lt;BR&gt;
+Output current: 12 A continuous (30 maximum)&lt;BR&gt;
+3V-compatible inputs&lt;BR&gt;
+PWM operation up to 20 kHz, which is ultrasonic and allows for quieter motor operation&lt;BR&gt;
+Current sense output proportional to motor current (approx. 140 mV/A)&lt;BR&gt;
+Motor indicator LEDs (indicates what the outputs are doing even when no motor is connected)&lt;BR&gt;
+Robust:&lt;BR&gt;
+Reverse-voltage protection&lt;BR&gt;
+Can survive input voltages up to 41 V&lt;BR&gt;
+Undervoltage and overvoltage shutdown&lt;BR&gt;
+High-side and low-side thermal shutdown&lt;BR&gt;
+Short-to-ground and short-to-Vcc protection&lt;BR&gt;</description>
+<gates>
+<gate name="G$1" symbol="MOTORSHIELD" x="-2.54" y="15.24"/>
+</gates>
+<devices>
+<device name="" package="MOTOR-SHIELD">
+<connects>
+<connect gate="G$1" pin="CS" pad="CS"/>
+<connect gate="G$1" pin="ENA/DIAGA" pad="ENA/DIAGA"/>
+<connect gate="G$1" pin="ENB/DIAGB" pad="ENB/DIAGB"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GND2" pad="GND2"/>
+<connect gate="G$1" pin="GNDM" pad="GNDMOT-1"/>
+<connect gate="G$1" pin="INA" pad="INA"/>
+<connect gate="G$1" pin="INB" pad="INB"/>
+<connect gate="G$1" pin="INMOT1" pad="INMOT1"/>
+<connect gate="G$1" pin="INMOT2" pad="INMOT2"/>
+<connect gate="G$1" pin="PWM" pad="PWM"/>
+<connect gate="G$1" pin="VDD" pad="VDD"/>
+<connect gate="G$1" pin="VMOT" pad="VMOT-1"/>
+<connect gate="G$1" pin="VOUT" pad="VOUT"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MOTOR" value="motor" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -15330,6 +15435,10 @@ Based on the following sources:
 <part name="GND2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="U$2" library="Teensy_3_and_LC_Series_Boards_v1.4" deviceset="TEENSY_3.1-3.2_ALL_PINS&amp;PADS" device=""/>
 <part name="IC2" library="74xx-us" library_urn="urn:adsk.eagle:library:88" deviceset="74*595" device="D" package3d_urn="urn:adsk.eagle:package:2918/1" technology="LS"/>
+<part name="U$3" library="VHN5019" deviceset="VHN5019" device=""/>
+<part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY4" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15368,6 +15477,10 @@ Based on the following sources:
 <instance part="GND2" gate="1" x="-63.5" y="119.38"/>
 <instance part="U$2" gate="G$1" x="33.02" y="152.4"/>
 <instance part="IC2" gate="A" x="33.02" y="83.82"/>
+<instance part="U$3" gate="G$1" x="-55.88" y="86.36" rot="MR0"/>
+<instance part="GND3" gate="1" x="-43.18" y="99.06" rot="R90"/>
+<instance part="GND4" gate="1" x="-91.44" y="81.28" rot="R270"/>
+<instance part="SUPPLY4" gate="G$1" x="-48.26" y="91.44" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -15440,6 +15553,11 @@ Based on the following sources:
 <wire x1="-40.64" y1="177.8" x2="-40.64" y2="182.88" width="0.1524" layer="91"/>
 <junction x="-40.64" y="182.88"/>
 </segment>
+<segment>
+<pinref part="SUPPLY4" gate="G$1" pin="3.3V"/>
+<pinref part="U$3" gate="G$1" pin="VDD"/>
+<wire x1="-48.26" y1="91.44" x2="-53.34" y2="91.44" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -15491,6 +15609,25 @@ Based on the following sources:
 <wire x1="-50.8" y1="137.16" x2="-53.34" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="-50.8" y1="134.62" x2="-50.8" y2="137.16" width="0.1524" layer="91"/>
 <junction x="-50.8" y="137.16"/>
+</segment>
+</net>
+<net name="GND2" class="0">
+<segment>
+<pinref part="U$3" gate="G$1" pin="GND2"/>
+<wire x1="-53.34" y1="93.98" x2="-50.8" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="U$3" gate="G$1" pin="GND"/>
+<wire x1="-45.72" y1="99.06" x2="-50.8" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="99.06" x2="-53.34" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="93.98" x2="-50.8" y2="99.06" width="0.1524" layer="91"/>
+<junction x="-50.8" y="99.06"/>
+</segment>
+</net>
+<net name="GNDM" class="0">
+<segment>
+<pinref part="U$3" gate="G$1" pin="GNDM"/>
+<pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="-81.28" y1="81.28" x2="-88.9" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
