@@ -16053,13 +16053,6 @@ Grid 5.00 mm&lt;p&gt;
 <label x="134.62" y="167.64" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="MOTOTRE1-1" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="INMOT1"/>
-<wire x1="-78.74" y1="96.52" x2="-83.82" y2="96.52" width="0.1524" layer="91"/>
-<label x="-83.82" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="MOTORE1-2" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="INMOT2"/>
@@ -16113,6 +16106,11 @@ Grid 5.00 mm&lt;p&gt;
 <pinref part="X1" gate="-1" pin="KL"/>
 <junction x="132.08" y="60.96"/>
 <label x="132.08" y="60.96" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="INMOT1"/>
+<wire x1="-78.74" y1="96.52" x2="-83.82" y2="96.52" width="0.1524" layer="91"/>
+<label x="-83.82" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="MOTORE4-2" class="0">
