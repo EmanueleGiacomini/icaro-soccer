@@ -9118,13 +9118,13 @@ Source: &lt;a href="http://focus.ti.com/docs/prod/folders/print/ads1015.html"&gt
 <part name="T2" library="opto-trans-siemens" library_urn="urn:adsk.eagle:library:317" deviceset="BP103" device="" package3d_urn="urn:adsk.eagle:package:21787/1"/>
 <part name="T3" library="opto-trans-siemens" library_urn="urn:adsk.eagle:library:317" deviceset="BP103" device="" package3d_urn="urn:adsk.eagle:package:21787/1"/>
 <part name="T4" library="opto-trans-siemens" library_urn="urn:adsk.eagle:library:317" deviceset="BP103" device="" package3d_urn="urn:adsk.eagle:package:21787/1"/>
-<part name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
-<part name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
-<part name="R3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
-<part name="R4" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/1"/>
-<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/1"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/1"/>
+<part name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
+<part name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
+<part name="R3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
+<part name="R4" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/1" value="180"/>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/1" value="180"/>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/1" value="180"/>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:23498/1"/>
 <part name="SV1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-2" device="" package3d_urn="urn:adsk.eagle:package:8334/1"/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="3.3NF" device="-0603-100V-10%" value="3.3nF"/>
@@ -9138,10 +9138,10 @@ Source: &lt;a href="http://focus.ti.com/docs/prod/folders/print/ads1015.html"&gt
 <part name="D8" library="SparkFun-LED" deviceset="LED" device="3MM"/>
 <part name="U$1" library="bt_adc" deviceset="ADS1015" device="IDGT"/>
 <part name="C5" library="SparkFun-Capacitors" deviceset="1.0UF" device="-0402-16V-10%" value="1.0uF"/>
-<part name="R13" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
-<part name="R14" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
-<part name="R15" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
-<part name="R16" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1"/>
+<part name="R13" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
+<part name="R14" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
+<part name="R15" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
+<part name="R16" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="0204/7" package3d_urn="urn:adsk.eagle:package:25945/1" value="10K"/>
 </parts>
 <sheets>
 <sheet>
