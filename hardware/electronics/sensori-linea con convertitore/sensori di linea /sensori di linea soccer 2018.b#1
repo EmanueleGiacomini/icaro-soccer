@@ -2676,14 +2676,7 @@ Source: http://cache.national.com/ds/LM/LM5030.pdf</description>
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="default">
-<description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
-&lt;p&gt;
-Die Standard-Design-Rules sind so gewählt, dass sie für 
-die meisten Anwendungen passen. Sollte ihre Platine 
-besondere Anforderungen haben, treffen Sie die erforderlichen
-Einstellungen hier und speichern die Design Rules unter 
-einem neuen Namen ab.</description>
+<designrules name="SparkFun">
 <description language="en">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
 The default Design Rules have been set to cover
@@ -2694,22 +2687,22 @@ design rules under a new name.</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
 <param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="6mil"/>
-<param name="mdWirePad" value="6mil"/>
-<param name="mdWireVia" value="6mil"/>
-<param name="mdPadPad" value="6mil"/>
-<param name="mdPadVia" value="6mil"/>
-<param name="mdViaVia" value="6mil"/>
-<param name="mdSmdPad" value="6mil"/>
-<param name="mdSmdVia" value="6mil"/>
-<param name="mdSmdSmd" value="6mil"/>
-<param name="mdViaViaSameLayer" value="6mil"/>
+<param name="mdWireWire" value="8mil"/>
+<param name="mdWirePad" value="8mil"/>
+<param name="mdWireVia" value="8mil"/>
+<param name="mdPadPad" value="8mil"/>
+<param name="mdPadVia" value="8mil"/>
+<param name="mdViaVia" value="8mil"/>
+<param name="mdSmdPad" value="8mil"/>
+<param name="mdSmdVia" value="8mil"/>
+<param name="mdSmdSmd" value="8mil"/>
+<param name="mdViaViaSameLayer" value="8mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
-<param name="mdCopperDimension" value="40mil"/>
-<param name="mdDrill" value="6mil"/>
+<param name="mdCopperDimension" value="8mil"/>
+<param name="mdDrill" value="8mil"/>
 <param name="mdSmdStop" value="0mil"/>
-<param name="msWidth" value="6mil"/>
-<param name="msDrill" value="0.35mm"/>
+<param name="msWidth" value="8mil"/>
+<param name="msDrill" value="20mil"/>
 <param name="msMicroVia" value="9.99mm"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
@@ -2719,15 +2712,15 @@ design rules under a new name.</description>
 <param name="rvViaInner" value="0.25"/>
 <param name="rvMicroViaOuter" value="0.25"/>
 <param name="rvMicroViaInner" value="0.25"/>
-<param name="rlMinPadTop" value="10mil"/>
+<param name="rlMinPadTop" value="12mil"/>
 <param name="rlMaxPadTop" value="20mil"/>
 <param name="rlMinPadInner" value="10mil"/>
 <param name="rlMaxPadInner" value="20mil"/>
-<param name="rlMinPadBottom" value="10mil"/>
+<param name="rlMinPadBottom" value="12mil"/>
 <param name="rlMaxPadBottom" value="20mil"/>
-<param name="rlMinViaOuter" value="8mil"/>
+<param name="rlMinViaOuter" value="10mil"/>
 <param name="rlMaxViaOuter" value="20mil"/>
-<param name="rlMinViaInner" value="8mil"/>
+<param name="rlMinViaInner" value="10mil"/>
 <param name="rlMaxViaInner" value="20mil"/>
 <param name="rlMinMicroViaOuter" value="4mil"/>
 <param name="rlMaxMicroViaOuter" value="20mil"/>
@@ -2744,7 +2737,7 @@ design rules under a new name.</description>
 <param name="mlMaxStopFrame" value="4mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="0mil"/>
+<param name="mlViaStopLimit" value="20mil"/>
 <param name="srRoundness" value="0"/>
 <param name="srMinRoundness" value="0mil"/>
 <param name="srMaxRoundness" value="0mil"/>
@@ -3280,23 +3273,33 @@ design rules under a new name.</description>
 </signals>
 <errors>
 <approved hash="1,20,e52e130a12bce498"/>
+<approved hash="1,20,fd0021fc20bcfc40"/>
+<approved hash="21,19,9461966396639461"/>
+<approved hash="1,20,cb2c3f383dcbc9df"/>
+<approved hash="1,20,7b01c0fdc1057af9"/>
 <approved hash="1,20,3767031302023676"/>
+<approved hash="1,20,7d20c15cc19f7de3"/>
+<approved hash="1,20,9f0e20f221339ecf"/>
+<approved hash="1,20,7902c2fec13d7ac1"/>
+<approved hash="1,20,e20f18731833e24f"/>
 <approved hash="1,20,784b1c3f1cce78ba"/>
 <approved hash="1,20,be831c771d65bf91"/>
 <approved hash="1,20,af607b6c64edb0e1"/>
 <approved hash="1,20,7f680b1c0a0c7e78"/>
-<approved hash="1,20,cb2c3f383dcbc9df"/>
-<approved hash="1,20,79680d1c0a0c7e78"/>
-<approved hash="1,20,5bef201b260a5dfe"/>
-<approved hash="1,20,ca68145417a1c99d"/>
-<approved hash="1,20,f4179c639f6cf718"/>
 <approved hash="1,20,786b9c1f9ccf78bb"/>
+<approved hash="1,20,1d62191e19521d2e"/>
 <approved hash="1,20,78cb9cbf9d0b797f"/>
-<approved hash="1,20,14c86f3c6e4b15bf"/>
+<approved hash="1,20,58c83cbc3d0e597a"/>
 <approved hash="1,20,9f687b1c7a0f9e7b"/>
-<approved hash="1,20,b4c87d3c7231bbc5"/>
 <approved hash="1,20,f5491d5d1cacf4b8"/>
+<approved hash="1,20,14c86f3c6e4b15bf"/>
+<approved hash="1,20,b4c87d3c7231bbc5"/>
 <approved hash="1,20,bff7d3bbd34ebf02"/>
+<approved hash="1,20,6c480c6c0c5a6c7e"/>
+<approved hash="1,20,ca68145417a1c99d"/>
+<approved hash="1,20,79680d1c0a0c7e78"/>
+<approved hash="1,20,f4179c639f6cf718"/>
+<approved hash="1,20,5bef201b260a5dfe"/>
 <approved hash="5,1,fd74204d6dd9df17"/>
 <approved hash="5,1,fec720496ddfdca6"/>
 <approved hash="5,1,f85620496dddda35"/>
@@ -3305,14 +3308,6 @@ design rules under a new name.</description>
 <approved hash="5,1,97ae4fb66dddda32"/>
 <approved hash="5,1,913f4fb66ddfdca1"/>
 <approved hash="5,1,928c4fb26dd9df10"/>
-<approved hash="1,20,fd0021fc20bcfc40"/>
-<approved hash="1,20,1d62191e19521d2e"/>
-<approved hash="1,20,7d20c15cc19f7de3"/>
-<approved hash="1,20,9f0e20f221339ecf"/>
-<approved hash="1,20,7902c2fec13d7ac1"/>
-<approved hash="1,20,e20f18731833e24f"/>
-<approved hash="21,19,9461966396639461"/>
-<approved hash="1,20,7b01c0fdc1057af9"/>
 </errors>
 </board>
 </drawing>
