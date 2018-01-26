@@ -1,0 +1,4 @@
+- Display 7-segmenti (Con shift register dedicato )
+- Led vari di segnalazione (shift register aggiuntivo collegato al precedente)
+- Breakout di i2c e Uart (rx-tx)
+- Circuito per memoria SD
