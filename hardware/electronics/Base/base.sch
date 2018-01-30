@@ -15487,105 +15487,6 @@ Grid 5.00 mm&lt;p&gt;
 </deviceset>
 </devicesets>
 </library>
-<library name="SparkFun-Boards">
-<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
-This library contains footprints for SparkFun breakout boards, microcontrollers (Arduino, Particle, Teensy, etc.),  breadboards, non-RF modules, etc.
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="SD-MMC-CARD">
-<description>&lt;h3&gt; SD MMC Card Footprint&lt;/h3&gt;
-Basic reference with pads for SMD mounting of SD card. 
-&lt;p&gt;Specifications:
-&lt;ul&gt;&lt;li&gt;Pin count:9&lt;/li&gt;
-&lt;li&gt;Area:0.95x1.25 inch&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;Example device(s):
-&lt;ul&gt;&lt;li&gt;SD Card&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<wire x1="-12.7" y1="-13.97" x2="11.3" y2="-13.97" width="0.2032" layer="21"/>
-<wire x1="-12.7" y1="14.03" x2="-12.7" y2="-13.97" width="0.2032" layer="21"/>
-<wire x1="-12.7" y1="-13.97" x2="-12.7" y2="13.97" width="0.2032" layer="21"/>
-<wire x1="-12.7" y1="13.97" x2="-8.89" y2="17.78" width="0.2032" layer="21"/>
-<wire x1="-8.89" y1="17.78" x2="11.43" y2="17.78" width="0.2032" layer="21"/>
-<wire x1="11.43" y1="17.78" x2="11.43" y2="-13.97" width="0.2032" layer="21"/>
-<wire x1="11.43" y1="-13.97" x2="-12.7" y2="-13.97" width="0.2032" layer="21"/>
-<smd name="5" x="2.195" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
-<smd name="4" x="-0.34" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
-<smd name="8" x="9.16" y="14.703" dx="1.25" dy="6" layer="1" rot="R180"/>
-<smd name="7" x="7.16" y="14.703" dx="1.65" dy="6" layer="1" rot="R180"/>
-<smd name="6" x="4.76" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
-<smd name="1" x="-8.0146" y="14.7134" dx="1.75" dy="6" layer="1" rot="R180"/>
-<smd name="9" x="-10.8" y="12.03" dx="2" dy="5" layer="1" rot="R180"/>
-<smd name="2" x="-5.465" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
-<smd name="3" x="-2.87" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
-<text x="0" y="18.034" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-14.224" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="SD-MMC-CARD">
-<description>&lt;h3&gt;SD/MMC Card &lt;/h3&gt;
-&lt;p&gt;Breaks out all 9 pins for SD/MMC cards&lt;/p&gt;</description>
-<wire x1="-7.62" y1="-12.7" x2="5.08" y2="-12.7" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-12.7" x2="5.08" y2="12.7" width="0.254" layer="94"/>
-<wire x1="5.08" y1="12.7" x2="-7.62" y2="12.7" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="12.7" x2="-7.62" y2="-12.7" width="0.254" layer="94"/>
-<text x="-5.08" y="12.954" size="1.778" layer="95" font="vector">&gt;NAME</text>
-<text x="-5.08" y="-12.954" size="1.778" layer="96" font="vector" align="top-left">&gt;VALUE</text>
-<pin name="DAT2" x="-10.16" y="10.16" length="short"/>
-<pin name="CD/DAT3" x="-10.16" y="7.62" length="short"/>
-<pin name="CMD" x="-10.16" y="5.08" length="short"/>
-<pin name="VSS1" x="-10.16" y="2.54" length="short"/>
-<pin name="VDD" x="-10.16" y="0" length="short"/>
-<pin name="DAT1" x="-10.16" y="-10.16" length="short"/>
-<pin name="DAT0" x="-10.16" y="-7.62" length="short"/>
-<pin name="VSS2" x="-10.16" y="-5.08" length="short"/>
-<pin name="CLK" x="-10.16" y="-2.54" length="short"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="SD_MMC_CARD" prefix="B">
-<description>&lt;h3&gt;SD MMC Card Footprint&lt;/h3&gt;
-&lt;p&gt;Mechanical footprint with connectors of an SD/MMC card- &lt;b&gt;NOT&lt;/b&gt; a socket!&lt;/p&gt;
-
-&lt;b&gt;&lt;p&gt;SparkFun Products:&lt;/b&gt;
-&lt;ul&gt;&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/11395"&gt;Electric Imp&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/13833"&gt;microSD Card with SD adapter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="SD-MMC-CARD" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SD_PCB" package="SD-MMC-CARD">
-<connects>
-<connect gate="G$1" pin="CD/DAT3" pad="1"/>
-<connect gate="G$1" pin="CLK" pad="5"/>
-<connect gate="G$1" pin="CMD" pad="2"/>
-<connect gate="G$1" pin="DAT0" pad="7"/>
-<connect gate="G$1" pin="DAT1" pad="8"/>
-<connect gate="G$1" pin="DAT2" pad="9"/>
-<connect gate="G$1" pin="VDD" pad="4"/>
-<connect gate="G$1" pin="VSS1" pad="3"/>
-<connect gate="G$1" pin="VSS2" pad="6"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -15642,7 +15543,8 @@ Basic reference with pads for SMD mounting of SD card.
 <part name="X4" library="con-wago-500" library_urn="urn:adsk.eagle:library:195" deviceset="W237-102" device="" package3d_urn="urn:adsk.eagle:package:10688/1"/>
 <part name="FRAME2" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device=""/>
 <part name="IC3" library="74xx-us" library_urn="urn:adsk.eagle:library:88" deviceset="74*595" device="D" package3d_urn="urn:adsk.eagle:package:2918/1" technology="LS"/>
-<part name="B1" library="SparkFun-Boards" deviceset="SD_MMC_CARD" device="SD_PCB"/>
+<part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="SUPPLY9" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16275,7 +16177,8 @@ Basic reference with pads for SMD mounting of SD card.
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0"/>
 <instance part="IC3" gate="A" x="66.04" y="116.84"/>
-<instance part="B1" gate="G$1" x="121.92" y="116.84"/>
+<instance part="GND13" gate="1" x="104.14" y="111.76" rot="R270"/>
+<instance part="SUPPLY9" gate="G$1" x="106.68" y="116.84" rot="R90"/>
 </instances>
 <busses>
 </busses>
