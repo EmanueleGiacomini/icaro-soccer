@@ -15550,13 +15550,16 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="-22.86" y1="154.94" x2="-22.86" y2="195.58" width="1.016" layer="96" style="longdash"/>
 <text x="-81.28" y="147.32" size="2.54" layer="99">Regolatore tensione 5V</text>
 <wire x1="-22.86" y1="154.94" x2="-22.86" y2="114.3" width="1.016" layer="96" style="longdash"/>
-<wire x1="-22.86" y1="114.3" x2="-99.06" y2="114.3" width="1.016" layer="96" style="longdash"/>
 <wire x1="-99.06" y1="195.58" x2="149.86" y2="195.58" width="1.016" layer="96" style="longdash"/>
 <wire x1="149.86" y1="195.58" x2="149.86" y2="48.26" width="1.016" layer="96" style="longdash"/>
 <wire x1="149.86" y1="48.26" x2="55.88" y2="48.26" width="1.016" layer="96" style="longdash"/>
-<wire x1="55.88" y1="48.26" x2="55.88" y2="27.94" width="1.016" layer="96" style="longdash"/>
 <wire x1="55.88" y1="27.94" x2="-99.06" y2="27.94" width="1.016" layer="96" style="longdash"/>
-<wire x1="-99.06" y1="27.94" x2="-99.06" y2="195.58" width="1.016" layer="96" style="longdash"/>
+<wire x1="-99.06" y1="27.94" x2="-99.06" y2="111.76" width="1.016" layer="96" style="longdash"/>
+<wire x1="-99.06" y1="111.76" x2="-99.06" y2="195.58" width="1.016" layer="96" style="longdash"/>
+<wire x1="55.88" y1="111.76" x2="-22.86" y2="111.76" width="1.27" layer="96" style="longdash"/>
+<wire x1="-22.86" y1="111.76" x2="-99.06" y2="111.76" width="1.27" layer="96" style="longdash"/>
+<wire x1="-22.86" y1="111.76" x2="-22.86" y2="114.3" width="1.27" layer="96" style="longdash"/>
+<wire x1="55.88" y1="27.94" x2="55.88" y2="111.76" width="1.27" layer="96" style="longdash"/>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="-63.5" y="182.88"/>
@@ -16053,13 +16056,6 @@ Grid 5.00 mm&lt;p&gt;
 <label x="134.62" y="167.64" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="MOTOTRE1-1" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="INMOT1"/>
-<wire x1="-78.74" y1="96.52" x2="-83.82" y2="96.52" width="0.1524" layer="91"/>
-<label x="-83.82" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="MOTORE1-2" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="INMOT2"/>
@@ -16113,6 +16109,11 @@ Grid 5.00 mm&lt;p&gt;
 <pinref part="X1" gate="-1" pin="KL"/>
 <junction x="132.08" y="60.96"/>
 <label x="132.08" y="60.96" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="INMOT1"/>
+<wire x1="-78.74" y1="96.52" x2="-83.82" y2="96.52" width="0.1524" layer="91"/>
+<label x="-83.82" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="MOTORE4-2" class="0">
