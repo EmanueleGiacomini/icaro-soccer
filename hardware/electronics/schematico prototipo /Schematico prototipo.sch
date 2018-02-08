@@ -671,6 +671,56 @@ Based on the following sources:
 </deviceset>
 </devicesets>
 </library>
+<library name="libreria valerio">
+<packages>
+<package name="REGOLATORE-3.3V-1A">
+<wire x1="12.7" y1="0" x2="12.7" y2="17.78" width="0.127" layer="21"/>
+<wire x1="12.7" y1="17.78" x2="0" y2="17.78" width="0.127" layer="21"/>
+<wire x1="12.7" y1="0" x2="0" y2="0" width="0.127" layer="21"/>
+<wire x1="0" y1="0" x2="0" y2="17.78" width="0.127" layer="21"/>
+<pad name="PG" x="1.27" y="1.27" drill="1"/>
+<pad name="SHDN" x="3.81" y="1.27" drill="1"/>
+<pad name="VIN" x="6.35" y="1.27" drill="1"/>
+<pad name="VOUT" x="11.43" y="1.27" drill="1"/>
+<pad name="GND" x="8.89" y="1.27" drill="1" shape="square"/>
+</package>
+</packages>
+<symbols>
+<symbol name="REGOLATORE-3.3V-1A">
+<wire x1="10.16" y1="7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<pin name="PG" x="5.08" y="12.7" length="middle" rot="R270"/>
+<pin name="SHDN" x="-5.08" y="12.7" length="middle" rot="R270"/>
+<pin name="VIN" x="-12.7" y="-2.54" length="middle"/>
+<pin name="GND" x="0" y="-12.7" length="middle" rot="R90"/>
+<pin name="VOUT" x="15.24" y="-2.54" length="middle" rot="R180"/>
+<wire x1="10.16" y1="7.62" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="REGOLATORE-3.3V-1A">
+<description>regolatore di tensione da 12V a 3,3 V</description>
+<gates>
+<gate name="G$1" symbol="REGOLATORE-3.3V-1A" x="-5.08" y="0"/>
+</gates>
+<devices>
+<device name="" package="REGOLATORE-3.3V-1A">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="PG" pad="PG"/>
+<connect gate="G$1" pin="SHDN" pad="SHDN"/>
+<connect gate="G$1" pin="VIN" pad="VIN"/>
+<connect gate="G$1" pin="VOUT" pad="VOUT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -687,6 +737,7 @@ Based on the following sources:
 <part name="U$4" library="VHN5019" deviceset="VHN5019" device=""/>
 <part name="U$5" library="VHN5019" deviceset="VHN5019" device=""/>
 <part name="IC1" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*04" device="N" package3d_urn="urn:adsk.eagle:package:2008/1"/>
+<part name="U$6" library="libreria valerio" deviceset="REGOLATORE-3.3V-1A" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -702,6 +753,7 @@ Based on the following sources:
 <instance part="IC1" gate="B" x="165.1" y="66.04"/>
 <instance part="IC1" gate="C" x="160.02" y="170.18"/>
 <instance part="IC1" gate="D" x="5.08" y="167.64"/>
+<instance part="U$6" gate="G$1" x="180.34" y="121.92"/>
 </instances>
 <busses>
 </busses>
@@ -852,12 +904,29 @@ Based on the following sources:
 <wire x1="22.86" y1="76.2" x2="17.78" y2="76.2" width="0.1524" layer="91"/>
 <label x="17.78" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="GND"/>
+<wire x1="180.34" y1="109.22" x2="180.34" y2="106.68" width="0.1524" layer="91"/>
+<label x="180.34" y="106.68" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="3.3V"/>
 <wire x1="127" y1="139.7" x2="132.08" y2="139.7" width="0.1524" layer="91"/>
 <label x="132.08" y="139.7" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$6" gate="G$1" pin="VOUT"/>
+<wire x1="195.58" y1="119.38" x2="200.66" y2="119.38" width="0.1524" layer="91"/>
+<label x="200.66" y="119.38" size="1.778" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="12V" class="0">
+<segment>
+<pinref part="U$6" gate="G$1" pin="VIN"/>
+<wire x1="167.64" y1="119.38" x2="162.56" y2="119.38" width="0.1524" layer="91"/>
+<label x="162.56" y="119.38" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
