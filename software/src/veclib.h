@@ -30,8 +30,8 @@
 
 int vecScalarMult(int A[], int B[], int dim);
 void vecMult(int A[], int B[], int dim);
-void vecSub(int A[] int B[], int dim);
-void vecSum(int A[] int B[], int dim);
+void vecSub(int A[], int B[], int dim);
+void vecSum(int A[], int B[], int dim);
 /*
   Da aggiungere:
   - Funzioni basiche matematiche sui vettori:

@@ -1738,6 +1738,52 @@ Grid 5.00 mm&lt;p&gt;
 </package3d>
 </packages3d>
 </library>
+<library name="SparkFun-Boards">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+This library contains footprints for SparkFun breakout boards, microcontrollers (Arduino, Particle, Teensy, etc.),  breadboards, non-RF modules, etc.
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="SD-MMC-CARD">
+<description>&lt;h3&gt; SD MMC Card Footprint&lt;/h3&gt;
+Basic reference with pads for SMD mounting of SD card. 
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:9&lt;/li&gt;
+&lt;li&gt;Area:0.95x1.25 inch&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;SD Card&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="-12.7" y1="-13.97" x2="11.3" y2="-13.97" width="0.2032" layer="21"/>
+<wire x1="-12.7" y1="14.03" x2="-12.7" y2="-13.97" width="0.2032" layer="21"/>
+<wire x1="-12.7" y1="-13.97" x2="-12.7" y2="13.97" width="0.2032" layer="21"/>
+<wire x1="-12.7" y1="13.97" x2="-8.89" y2="17.78" width="0.2032" layer="21"/>
+<wire x1="-8.89" y1="17.78" x2="11.43" y2="17.78" width="0.2032" layer="21"/>
+<wire x1="11.43" y1="17.78" x2="11.43" y2="-13.97" width="0.2032" layer="21"/>
+<wire x1="11.43" y1="-13.97" x2="-12.7" y2="-13.97" width="0.2032" layer="21"/>
+<smd name="5" x="2.195" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
+<smd name="4" x="-0.34" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
+<smd name="8" x="9.16" y="14.703" dx="1.25" dy="6" layer="1" rot="R180"/>
+<smd name="7" x="7.16" y="14.703" dx="1.65" dy="6" layer="1" rot="R180"/>
+<smd name="6" x="4.76" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
+<smd name="1" x="-8.0146" y="14.7134" dx="1.75" dy="6" layer="1" rot="R180"/>
+<smd name="9" x="-10.8" y="12.03" dx="2" dy="5" layer="1" rot="R180"/>
+<smd name="2" x="-5.465" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
+<smd name="3" x="-2.87" y="14.703" dx="1.75" dy="6" layer="1" rot="R180"/>
+<text x="0" y="18.034" size="0.6096" layer="25" font="vector" ratio="20" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-14.224" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
+</package>
+</packages>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1985,6 +2031,11 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="70K9898" x="-68.58" y="-262.89" size="1.778" layer="27" display="off"/>
 </element>
 <element name="IC3" library="74xx-us" library_urn="urn:adsk.eagle:library:88" package="SO16" package3d_urn="urn:adsk.eagle:package:2918/1" value="74LS595D" x="-142.24" y="-266.7"/>
+<<<<<<< HEAD
+<element name="B1" library="SparkFun-Boards" package="SD-MMC-CARD" value="SD_MMC_CARDSD_PCB" x="-161.29" y="-257.81"/>
+=======
+<element name="IC4" library="74xx-us" library_urn="urn:adsk.eagle:library:88" package="SO16" package3d_urn="urn:adsk.eagle:package:2918/1" value="74LS595D" x="-179.07" y="-266.7"/>
+>>>>>>> master
 </elements>
 <signals>
 <signal name="GND">
@@ -2012,6 +2063,12 @@ design rules under a new name.</description>
 <contactref element="U$7" pad="GNDMOT-1"/>
 <contactref element="IC2" pad="13"/>
 <contactref element="IC3" pad="8"/>
+<<<<<<< HEAD
+=======
+<contactref element="IC4" pad="8"/>
+<contactref element="IC3" pad="13"/>
+<contactref element="IC4" pad="13"/>
+>>>>>>> master
 <wire x1="-30.48" y1="-165.1" x2="-64.77" y2="-171.45" width="0" layer="19" extent="1-1"/>
 <wire x1="-30.48" y1="-160.02" x2="-30.48" y2="-165.1" width="0" layer="19" extent="1-1"/>
 <wire x1="-30.48" y1="-68.58" x2="-30.48" y2="-160.02" width="0" layer="19" extent="1-1"/>
@@ -2034,7 +2091,14 @@ design rules under a new name.</description>
 <wire x1="-29.08" y1="87.63" x2="-29.21" y2="74.93" width="0" layer="19" extent="1-1"/>
 <wire x1="-19.685" y1="91.9734" x2="-29.08" y2="87.63" width="0" layer="19" extent="1-1"/>
 <wire x1="-14.605" y1="85.8266" x2="-19.685" y2="91.9734" width="0" layer="19" extent="1-1"/>
+<<<<<<< HEAD
 <wire x1="-137.795" y1="-269.7734" x2="-64.77" y2="-171.45" width="0" layer="19" extent="1-1"/>
+=======
+<wire x1="-142.875" y1="-263.6266" x2="-64.77" y2="-171.45" width="0" layer="19" extent="1-1"/>
+<wire x1="-137.795" y1="-269.7734" x2="-142.875" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-174.625" y1="-269.7734" x2="-142.875" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-179.705" y1="-263.6266" x2="-174.625" y2="-269.7734" width="0" layer="19" extent="1-1"/>
+>>>>>>> master
 </signal>
 <signal name="VIN">
 <contactref element="U$2" pad="VIN"/>
@@ -2053,15 +2117,23 @@ design rules under a new name.</description>
 <contactref element="U$3" pad="VDD"/>
 <contactref element="IC2" pad="16"/>
 <contactref element="IC2" pad="10"/>
+<contactref element="IC3" pad="16"/>
+<contactref element="IC4" pad="16"/>
+<contactref element="IC4" pad="10"/>
+<contactref element="IC3" pad="10"/>
+<wire x1="-175.895" y1="-263.6266" x2="-183.515" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-146.685" y1="-263.6266" x2="-175.895" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-139.065" y1="-263.6266" x2="-146.685" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-40.64" y1="2.54" x2="-139.065" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.56" y1="17.78" x2="-40.64" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="-30.48" y1="30.48" x2="-35.56" y2="17.78" width="0" layer="19" extent="1-1"/>
+<wire x1="-15.24" y1="55.88" x2="-30.48" y2="30.48" width="0" layer="19" extent="1-1"/>
+<wire x1="-15.24" y1="72.39" x2="-15.24" y2="55.88" width="0" layer="19" extent="1-1"/>
+<wire x1="-15.875" y1="91.9734" x2="-15.24" y2="72.39" width="0" layer="19" extent="1-1"/>
 <wire x1="-23.495" y1="91.9734" x2="-15.875" y2="91.9734" width="0" layer="19" extent="1-1"/>
 <wire x1="-31.88" y1="87.63" x2="-23.495" y2="91.9734" width="0" layer="19" extent="1-1"/>
 <wire x1="-36.96" y1="87.63" x2="-31.88" y2="87.63" width="0" layer="19" extent="1-1"/>
 <wire x1="-45.72" y1="74.93" x2="-36.96" y2="87.63" width="0" layer="19" extent="1-1"/>
-<wire x1="-15.24" y1="72.39" x2="-15.875" y2="91.9734" width="0" layer="19" extent="1-1"/>
-<wire x1="-15.24" y1="55.88" x2="-15.24" y2="72.39" width="0" layer="19" extent="1-1"/>
-<wire x1="-30.48" y1="30.48" x2="-15.24" y2="55.88" width="0" layer="19" extent="1-1"/>
-<wire x1="-35.56" y1="17.78" x2="-30.48" y2="30.48" width="0" layer="19" extent="1-1"/>
-<wire x1="-40.64" y1="2.54" x2="-35.56" y2="17.78" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VBAT">
 <contactref element="U$2" pad="VBAT"/>
@@ -2152,14 +2224,22 @@ design rules under a new name.</description>
 <signal name="LATCH">
 <contactref element="IC2" pad="12"/>
 <contactref element="U$2" pad="26"/>
-<wire x1="-38.1" y1="10.16" x2="-18.415" y2="91.9734" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="12"/>
+<contactref element="IC4" pad="12"/>
+<wire x1="-141.605" y1="-263.6266" x2="-178.435" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-38.1" y1="10.16" x2="-141.605" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-18.415" y1="91.9734" x2="-38.1" y2="10.16" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CLOCK">
 <contactref element="IC2" pad="11"/>
 <contactref element="U$2" pad="27"/>
-<wire x1="-38.1" y1="7.62" x2="-17.145" y2="91.9734" width="0" layer="19" extent="1-1"/>
+<contactref element="IC3" pad="11"/>
+<contactref element="IC4" pad="11"/>
+<wire x1="-140.335" y1="-263.6266" x2="-177.165" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-38.1" y1="7.62" x2="-140.335" y2="-263.6266" width="0" layer="19" extent="1-1"/>
+<wire x1="-17.145" y1="91.9734" x2="-38.1" y2="7.62" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="DATA-IN">
+<signal name="DATA-IN1">
 <contactref element="IC2" pad="14"/>
 <contactref element="U$2" pad="28"/>
 <wire x1="-38.1" y1="5.08" x2="-20.955" y2="91.9734" width="0" layer="19" extent="1-1"/>
@@ -2253,8 +2333,16 @@ design rules under a new name.</description>
 <contactref element="U$5" pad="INMOT1"/>
 <wire x1="-62.19" y1="-226.06" x2="-64.77" y2="-80.01" width="0" layer="19" extent="1-1"/>
 </signal>
+<<<<<<< HEAD
 <signal name="VCC">
 <contactref element="IC3" pad="16"/>
+=======
+<signal name="N$5">
+<contactref element="IC3" pad="14"/>
+</signal>
+<signal name="N$10">
+<contactref element="IC4" pad="14"/>
+>>>>>>> master
 </signal>
 </signals>
 </board>

@@ -15578,6 +15578,30 @@ Grid 5.00 mm&lt;p&gt;
 <instance part="SUPPLY2" gate="G$1" x="-45.72" y="137.16"/>
 <instance part="GND2" gate="1" x="-63.5" y="119.38"/>
 <instance part="U$2" gate="G$1" x="33.02" y="152.4"/>
+<<<<<<< HEAD
+<instance part="IC2" gate="A" x="58.42" y="86.36"/>
+<instance part="U$3" gate="G$1" x="-55.88" y="86.36" rot="MR0"/>
+<instance part="GND3" gate="1" x="-43.18" y="99.06" rot="R90"/>
+<instance part="GND4" gate="1" x="-91.44" y="81.28" rot="R270"/>
+<instance part="SUPPLY4" gate="G$1" x="-48.26" y="91.44" rot="R270"/>
+<instance part="IC2" gate="P" x="60.96" y="104.14" rot="R270"/>
+<instance part="SUPPLY3" gate="G$1" x="71.12" y="104.14" rot="R270"/>
+<instance part="GND6" gate="1" x="48.26" y="104.14" rot="R270"/>
+<instance part="U$4" gate="G$1" x="-55.88" y="50.8" rot="MR0"/>
+<instance part="U$5" gate="G$1" x="2.54" y="86.36" rot="MR0"/>
+<instance part="U$7" gate="G$1" x="2.54" y="50.8" rot="MR0"/>
+<instance part="GND5" gate="1" x="15.24" y="99.06" rot="R90"/>
+<instance part="SUPPLY5" gate="G$1" x="10.16" y="91.44" rot="R270"/>
+<instance part="GND7" gate="1" x="-33.02" y="81.28" rot="R270"/>
+<instance part="GND8" gate="1" x="15.24" y="63.5" rot="R90"/>
+<instance part="GND9" gate="1" x="-43.18" y="63.5" rot="R90"/>
+<instance part="GND10" gate="1" x="-91.44" y="45.72" rot="R270"/>
+<instance part="GND11" gate="1" x="-33.02" y="45.72" rot="R270"/>
+<instance part="SUPPLY6" gate="G$1" x="10.16" y="55.88" rot="R270"/>
+<instance part="SUPPLY7" gate="G$1" x="-48.26" y="55.88" rot="R270"/>
+<instance part="SUPPLY8" gate="G$1" x="33.02" y="88.9" rot="R90"/>
+<instance part="GND12" gate="1" x="43.18" y="73.66" rot="R270"/>
+=======
 <instance part="IC2" gate="A" x="119.38" y="165.1"/>
 <instance part="U$3" gate="G$1" x="-53.34" y="83.82" rot="MR0"/>
 <instance part="GND3" gate="1" x="-40.64" y="96.52" rot="R90"/>
@@ -15600,6 +15624,7 @@ Grid 5.00 mm&lt;p&gt;
 <instance part="SUPPLY7" gate="G$1" x="22.86" y="88.9" rot="R270"/>
 <instance part="SUPPLY8" gate="G$1" x="93.98" y="167.64" rot="R90"/>
 <instance part="GND12" gate="1" x="104.14" y="152.4" rot="R270"/>
+>>>>>>> master
 <instance part="X1" gate="-1" x="127" y="60.96"/>
 <instance part="X1" gate="-2" x="127" y="55.88"/>
 <instance part="X2" gate="-1" x="127" y="73.66"/>
@@ -16035,6 +16060,11 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="17.78" y1="40.64" x2="27.94" y2="40.64" width="0.1524" layer="91"/>
 <label x="27.94" y="40.64" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="26/A15"/>
+<junction x="55.88" y="121.92"/>
+<label x="55.88" y="121.92" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="MOT2-INB" class="0">
 <segment>
@@ -16052,26 +16082,10 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="132.08" y1="167.64" x2="134.62" y2="167.64" width="0.1524" layer="91"/>
 <label x="134.62" y="167.64" size="1.27" layer="95" xref="yes"/>
 </segment>
-</net>
-<net name="MOTRE4-1" class="0">
 <segment>
-<pinref part="U$7" gate="G$1" pin="INMOT1"/>
-<wire x1="-78.74" y1="58.42" x2="-83.82" y2="58.42" width="0.1524" layer="91"/>
-<label x="-83.82" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="MOTRE4-2" class="0">
-<segment>
-<pinref part="U$7" gate="G$1" pin="INMOT2"/>
-<wire x1="-78.74" y1="35.56" x2="-83.82" y2="35.56" width="0.1524" layer="91"/>
-<label x="-83.82" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="MOTOTRE1-1" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="INMOT1"/>
-<wire x1="-78.74" y1="96.52" x2="-83.82" y2="96.52" width="0.1524" layer="91"/>
-<label x="-83.82" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="27/A16"/>
+<junction x="55.88" y="124.46"/>
+<label x="55.88" y="124.46" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="MOTORE1-2" class="0">
@@ -16093,11 +16107,6 @@ Grid 5.00 mm&lt;p&gt;
 <label x="-15.24" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="X3" gate="-2" pin="KL"/>
-<junction x="106.68" y="68.58"/>
-<label x="106.68" y="68.58" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
 <pinref part="X3" gate="-1" pin="KL"/>
 <junction x="106.68" y="73.66"/>
 <label x="106.68" y="73.66" size="1.27" layer="95" xref="yes"/>
@@ -16109,12 +16118,10 @@ Grid 5.00 mm&lt;p&gt;
 <wire x1="-10.16" y1="73.66" x2="-15.24" y2="73.66" width="0.1524" layer="91"/>
 <label x="-15.24" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-</net>
-<net name="MOTRE2-1" class="0">
 <segment>
-<pinref part="U$5" gate="G$1" pin="INMOT1"/>
-<wire x1="-10.16" y1="58.42" x2="-15.24" y2="58.42" width="0.1524" layer="91"/>
-<label x="-15.24" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="X3" gate="-2" pin="KL"/>
+<junction x="106.68" y="68.58"/>
+<label x="106.68" y="68.58" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="MOTORE2-2" class="0">
@@ -16135,12 +16142,22 @@ Grid 5.00 mm&lt;p&gt;
 <junction x="132.08" y="60.96"/>
 <label x="132.08" y="60.96" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="INMOT1"/>
+<wire x1="-78.74" y1="96.52" x2="-83.82" y2="96.52" width="0.1524" layer="91"/>
+<label x="-83.82" y="96.52" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="MOTORE4-2" class="0">
 <segment>
 <pinref part="X4" gate="-2" pin="KL"/>
 <junction x="106.68" y="55.88"/>
 <label x="106.68" y="55.88" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$7" gate="G$1" pin="INMOT2"/>
+<wire x1="-78.74" y1="35.56" x2="-83.82" y2="35.56" width="0.1524" layer="91"/>
+<label x="-83.82" y="35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="MOTORE4-1" class="0">
@@ -16149,12 +16166,27 @@ Grid 5.00 mm&lt;p&gt;
 <junction x="106.68" y="60.96"/>
 <label x="106.68" y="60.96" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$7" gate="G$1" pin="INMOT1"/>
+<wire x1="-78.74" y1="58.42" x2="-83.82" y2="58.42" width="0.1524" layer="91"/>
+<label x="-83.82" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="MOTORE2-1" class="0">
 <segment>
 <pinref part="X2" gate="-1" pin="KL"/>
 <junction x="132.08" y="73.66"/>
 <label x="132.08" y="73.66" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$5" gate="G$1" pin="INMOT1"/>
+<wire x1="-10.16" y1="58.42" x2="-15.24" y2="58.42" width="0.1524" layer="91"/>
+<label x="-15.24" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="28/A17"/>
+<junction x="55.88" y="127"/>
+<label x="55.88" y="127" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
