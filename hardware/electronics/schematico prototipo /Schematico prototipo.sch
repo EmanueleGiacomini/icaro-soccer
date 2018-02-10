@@ -738,10 +738,15 @@ Based on the following sources:
 <part name="U$5" library="VHN5019" deviceset="VHN5019" device=""/>
 <part name="IC1" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*04" device="N" package3d_urn="urn:adsk.eagle:package:2008/1"/>
 <part name="U$6" library="libreria valerio" deviceset="REGOLATORE-3.3V-1A" device=""/>
+<part name="U$7" library="libreria valerio" deviceset="REGOLATORE-3.3V-1A" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<wire x1="223.52" y1="200.66" x2="-27.94" y2="200.66" width="0.4064" layer="96" style="longdash"/>
+<wire x1="-27.94" y1="200.66" x2="-27.94" y2="27.94" width="0.4064" layer="96" style="longdash"/>
+<wire x1="-27.94" y1="27.94" x2="223.52" y2="27.94" width="0.4064" layer="96" style="longdash"/>
+<wire x1="223.52" y1="200.66" x2="223.52" y2="27.94" width="0.4064" layer="96" style="longdash"/>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="104.14" y="114.3"/>
@@ -754,6 +759,7 @@ Based on the following sources:
 <instance part="IC1" gate="C" x="160.02" y="170.18"/>
 <instance part="IC1" gate="D" x="5.08" y="167.64"/>
 <instance part="U$6" gate="G$1" x="180.34" y="121.92"/>
+<instance part="U$7" gate="G$1" x="20.32" y="124.46"/>
 </instances>
 <busses>
 </busses>
@@ -909,6 +915,11 @@ Based on the following sources:
 <wire x1="180.34" y1="109.22" x2="180.34" y2="106.68" width="0.1524" layer="91"/>
 <label x="180.34" y="106.68" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$7" gate="G$1" pin="GND"/>
+<wire x1="20.32" y1="111.76" x2="20.32" y2="109.22" width="0.1524" layer="91"/>
+<label x="20.32" y="109.22" size="1.778" layer="95" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
@@ -927,6 +938,18 @@ Based on the following sources:
 <pinref part="U$6" gate="G$1" pin="VIN"/>
 <wire x1="167.64" y1="119.38" x2="162.56" y2="119.38" width="0.1524" layer="91"/>
 <label x="162.56" y="119.38" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$7" gate="G$1" pin="VIN"/>
+<wire x1="7.62" y1="121.92" x2="2.54" y2="121.92" width="0.1524" layer="91"/>
+<label x="2.54" y="121.92" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="5V" class="0">
+<segment>
+<pinref part="U$7" gate="G$1" pin="VOUT"/>
+<wire x1="35.56" y1="121.92" x2="40.64" y2="121.92" width="0.1524" layer="91"/>
+<label x="40.64" y="121.92" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
