@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.5.0">
+<eagle version="8.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -13556,6 +13556,29 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="0" y="-1.27" size="0.6096" layer="27" font="vector" ratio="20" align="top-center">&gt;VALUE</text>
 <wire x1="2.7686" y1="1.016" x2="2.7686" y2="-1.016" width="0.127" layer="22"/>
 </package>
+<package name="SUPER_BRIGHT_SMD_LED_3014">
+<description>3014 Package for LEDs</description>
+<wire x1="-1.45" y1="0.7" x2="1.45" y2="0.7" width="0.127" layer="51"/>
+<wire x1="1.45" y1="0.7" x2="1.45" y2="-0.7" width="0.127" layer="51"/>
+<wire x1="1.45" y1="-0.7" x2="-1.45" y2="-0.7" width="0.127" layer="51"/>
+<wire x1="-1.45" y1="-0.7" x2="-1.45" y2="0.7" width="0.127" layer="51"/>
+<smd name="A" x="-1.2" y="0" dx="0.8" dy="1" layer="1" rot="R90" cream="no"/>
+<smd name="C" x="0.827" y="0" dx="0.8" dy="1.9" layer="1" rot="R90" cream="no"/>
+<wire x1="-1.5" y1="0.7" x2="1.5" y2="0.7" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="0.7" x2="1.5" y2="0.5" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="-0.5" x2="1.5" y2="-0.7" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="-0.7" x2="-1.5" y2="-0.7" width="0.2032" layer="21"/>
+<wire x1="-1.5" y1="0.7" x2="-1.5" y2="0.5" width="0.2032" layer="21"/>
+<wire x1="-1.5" y1="-0.7" x2="-1.5" y2="-0.5" width="0.2032" layer="21"/>
+<rectangle x1="-0.075" y1="-0.35" x2="1.675" y2="0.35" layer="51"/>
+<rectangle x1="-1.625" y1="-0.35" x2="-0.775" y2="0.35" layer="51"/>
+<rectangle x1="-1.5" y1="-0.3" x2="-0.9" y2="0.3" layer="31"/>
+<rectangle x1="0" y1="-0.3" x2="0.6" y2="0.3" layer="31"/>
+<rectangle x1="1" y1="-0.3" x2="1.6" y2="0.3" layer="31"/>
+<text x="-1.5" y="0.9" size="0.6096" layer="25" font="vector" ratio="20">&gt;Name</text>
+<text x="-1.5" y="-1.4" size="0.6096" layer="27" font="vector" ratio="20">&gt;Value</text>
+<wire x1="2.019" y1="0.6825" x2="2.019" y2="-0.6825" width="0.2032" layer="21"/>
+</package>
 </packages>
 <symbols>
 <symbol name="LED">
@@ -13673,6 +13696,63 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LED-WHITE" prefix="D" uservalue="yes">
+<description>&lt;h3&gt;White SMD LED&lt;/h3&gt;
+
+Used in manufacturing several products at SparkFun. 
+
+&lt;p&gt;&lt;b&gt;Packages:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;&lt;b&gt; 0603&lt;/b&gt; - Bright White SMD 0603  package&lt;a href="http://www.kingbrightusa.com/product.asp?catalog_name=LED&amp;product_id=APT1608QWF/D"&gt;[Product Link]&lt;/li&gt;
+&lt;li&gt;&lt;b&gt; 1206&lt;/b&gt; - Bright White SMD1206  package &lt;a href="http://www.kingbrightusa.com/product.asp?catalog_name=LED&amp;product_id=APT3216QWF/D"&gt;[Product Link]&lt;/li&gt;
+&lt;li&gt;&lt;b&gt; 3014&lt;/b&gt; - Super Bright SMD 3014 package &lt;a href="http://www.lumileds.com/uploads/459/DS208-pdf"&gt;[Datasheet]&lt;/li&gt;
+&lt;ul&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;SparkFun Products:&lt;/b&gt;
+&lt;ul&gt;&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/13169”&gt;Blackberry Trackballer Breakout&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=”https://www.sparkfun.com/products/12651”&gt;Digital SandBox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="1206" package="LED-1206">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-09955" constant="no"/>
+<attribute name="VALUE" value="WHITE" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0603" package="LED-0603">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-09004"/>
+<attribute name="VALUE" value="WHITE" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="3014" package="SUPER_BRIGHT_SMD_LED_3014">
+<connects>
+<connect gate="G$1" pin="A" pad="A"/>
+<connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="DIO-13728" constant="no"/>
+<attribute name="VALUE" value="White, 60mA" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -15478,6 +15558,14 @@ Grid 5.00 mm&lt;p&gt;
 <part name="SUPPLY11" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY12" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="U$6" library="libreria valerio" deviceset="REGOLATORE-3.3V-1A" device=""/>
+<part name="D5" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
+<part name="D6" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
+<part name="D7" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
+<part name="D8" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
+<part name="D9" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
+<part name="D10" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
+<part name="D11" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
+<part name="D12" library="SparkFun-LED" deviceset="LED-WHITE" device="1206" value="WHITE"/>
 </parts>
 <sheets>
 <sheet>
@@ -16119,6 +16207,14 @@ Grid 5.00 mm&lt;p&gt;
 <instance part="GND16" gate="1" x="50.8" y="104.14" rot="R270"/>
 <instance part="SUPPLY11" gate="G$1" x="38.1" y="119.38" rot="R90"/>
 <instance part="SUPPLY12" gate="G$1" x="38.1" y="73.66" rot="R90"/>
+<instance part="D5" gate="G$1" x="101.6" y="127" rot="R90"/>
+<instance part="D6" gate="G$1" x="104.14" y="114.3" rot="R90"/>
+<instance part="D7" gate="G$1" x="104.14" y="104.14" rot="R90"/>
+<instance part="D8" gate="G$1" x="104.14" y="93.98" rot="R90"/>
+<instance part="D9" gate="G$1" x="106.68" y="83.82" rot="R90"/>
+<instance part="D10" gate="G$1" x="106.68" y="73.66" rot="R90"/>
+<instance part="D11" gate="G$1" x="109.22" y="63.5" rot="R90"/>
+<instance part="D12" gate="G$1" x="109.22" y="43.18" rot="R90"/>
 </instances>
 <busses>
 </busses>
