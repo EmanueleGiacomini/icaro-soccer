@@ -20,12 +20,10 @@ Motore::Motore() {
 
 }
 
-void Motore::inizializza(int dira, int dirb, int pwm) {
-  pinMode(dira, OUTPUT);
-  pinMode(dirb, OUTPUT);
+void Motore::inizializza(int pin_dir, int pwm) {
+  pinMode(pin_dir, OUTPUT);
   pinMode(pwm, OUTPUT);
-  _dira = dira;
-  _dirb = dirb;
+  _pin_dir = pin_dir;
   _pwm = pwm;
 }
 
@@ -37,8 +35,7 @@ void Motore::setVel(int vel) {
 }
 
 void Motore::elabora() {
-  digitalWrite(_dira, _dir);
-  digitalWrite(_dirb, !_dir);
+  digitalWrite(_pin_dir, _dir);
   analogWrite(_pwm, _vel);
 }
 

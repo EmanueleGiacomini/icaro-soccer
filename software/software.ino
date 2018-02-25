@@ -2,15 +2,15 @@
 #include "src/motlib.h"
 
 Motore motori[4];
-int pins[4][3] = {  {7, 8, 6},
-                    {9, 10, 11},
-                    {2, 3, 4},
-                    {5, 12, 13} };
+int pins[4][3] = {  {15, 22},
+                    {14, 20},
+                    {12, 6},
+                    {11, 9} };
 Piattaforma robot;
 int angoli[4] = {45, 135, 225, 315};
 void setup()  {
     for(int i = 0 ; i < 4; i++) {
-      motori[i].inizializza(pins[i][0], pins[i][1], pins[i][2]);
+      motori[i].inizializza(pins[i][0], pins[i][1]);
     }
     robot.inizializza(motori, angoli);
 

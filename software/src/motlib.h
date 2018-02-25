@@ -15,10 +15,10 @@
 
 class Motore {
   int _dir, _vel;
-  int _dira, _dirb, _pwm;
+  int _pin_dir, _pwm;
 public:
   Motore();
-  void inizializza(int dira, int dirb, int pwm);
+  void inizializza(int pin_dir, int pwm);
   void setVel(int vel);
   void elabora();
 };
