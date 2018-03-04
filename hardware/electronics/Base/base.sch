@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.6.3">
+<eagle version="8.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -19697,6 +19697,7 @@ W = angled&lt;p&gt;
 <part name="SUPPLY15" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY16" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY17" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
+<part name="SUPPLY18" library="SparkFun-PowerSymbols" deviceset="3.3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -19723,7 +19724,7 @@ W = angled&lt;p&gt;
 <text x="180.34" y="53.34" size="2.54" layer="99">Pin motori</text>
 <wire x1="160.02" y1="58.42" x2="160.02" y2="88.9" width="1.27" layer="96" style="longdash"/>
 <wire x1="160.02" y1="58.42" x2="220.98" y2="58.42" width="1.27" layer="96" style="longdash"/>
-<text x="175.26" y="101.6" size="2.54" layer="99">Shift register motori</text>
+<text x="180.34" y="101.6" size="2.54" layer="99">Shift register motori</text>
 <wire x1="160.02" y1="88.9" x2="160.02" y2="106.68" width="1.27" layer="96" style="longdash"/>
 <wire x1="160.02" y1="106.68" x2="220.98" y2="106.68" width="1.27" layer="96" style="longdash"/>
 <wire x1="220.98" y1="106.68" x2="220.98" y2="58.42" width="1.27" layer="96" style="longdash"/>
@@ -19792,6 +19793,7 @@ W = angled&lt;p&gt;
 <instance part="SUPPLY15" gate="G$1" x="172.72" y="132.08" rot="R90"/>
 <instance part="SUPPLY16" gate="G$1" x="213.36" y="149.86" rot="R90"/>
 <instance part="SUPPLY17" gate="G$1" x="213.36" y="132.08" rot="R90"/>
+<instance part="SUPPLY18" gate="G$1" x="246.38" y="147.32" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -19923,6 +19925,11 @@ W = angled&lt;p&gt;
 <wire x1="236.22" y1="144.78" x2="238.76" y2="144.78" width="0.1524" layer="91"/>
 <label x="238.76" y="144.78" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="SV1" gate="1" pin="3"/>
+<wire x1="195.58" y1="147.32" x2="198.12" y2="147.32" width="0.1524" layer="91"/>
+<label x="198.12" y="147.32" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
@@ -19974,6 +19981,16 @@ W = angled&lt;p&gt;
 <pinref part="SV4" gate="1" pin="6"/>
 <wire x1="220.98" y1="132.08" x2="213.36" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY17" gate="G$1" pin="3.3V"/>
+</segment>
+<segment>
+<pinref part="SV2" gate="1" pin="3"/>
+<wire x1="236.22" y1="147.32" x2="246.38" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="SUPPLY18" gate="G$1" pin="3.3V"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="3.3V"/>
+<pinref part="SUPPLY13" gate="G$1" pin="3.3V"/>
+<wire x1="142.24" y1="154.94" x2="144.78" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -20403,6 +20420,16 @@ W = angled&lt;p&gt;
 <wire x1="220.98" y1="129.54" x2="218.44" y2="129.54" width="0.1524" layer="91"/>
 <label x="218.44" y="129.54" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="SV3" gate="1" pin="3"/>
+<wire x1="195.58" y1="129.54" x2="198.12" y2="129.54" width="0.1524" layer="91"/>
+<label x="198.12" y="129.54" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="18/A4/T/SDA0"/>
+<junction x="96.52" y="111.76"/>
+<label x="96.52" y="111.76" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -20425,12 +20452,15 @@ W = angled&lt;p&gt;
 <wire x1="220.98" y1="144.78" x2="218.44" y2="144.78" width="0.1524" layer="91"/>
 <label x="218.44" y="144.78" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-</net>
-<net name="N$22" class="0">
 <segment>
-<pinref part="SV3" gate="1" pin="3"/>
-<wire x1="195.58" y1="129.54" x2="198.12" y2="129.54" width="0.1524" layer="91"/>
-<label x="198.12" y="129.54" size="1.27" layer="95" xref="yes"/>
+<pinref part="SV4" gate="1" pin="3"/>
+<wire x1="236.22" y1="129.54" x2="238.76" y2="129.54" width="0.1524" layer="91"/>
+<label x="238.76" y="129.54" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="19/A5/T/SCL0"/>
+<junction x="96.52" y="109.22"/>
+<label x="96.52" y="109.22" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="ALERT-2" class="0">
@@ -20440,13 +20470,6 @@ W = angled&lt;p&gt;
 <label x="198.12" y="132.08" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="N$25" class="0">
-<segment>
-<pinref part="SV1" gate="1" pin="3"/>
-<wire x1="195.58" y1="147.32" x2="198.12" y2="147.32" width="0.1524" layer="91"/>
-<label x="198.12" y="147.32" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="ALERT-1" class="0">
 <segment>
 <pinref part="SV1" gate="1" pin="5"/>
@@ -20454,25 +20477,11 @@ W = angled&lt;p&gt;
 <label x="198.12" y="149.86" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="N$34" class="0">
-<segment>
-<pinref part="SV4" gate="1" pin="3"/>
-<wire x1="236.22" y1="129.54" x2="238.76" y2="129.54" width="0.1524" layer="91"/>
-<label x="238.76" y="129.54" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
 <net name="ALERT-4" class="0">
 <segment>
 <pinref part="SV4" gate="1" pin="5"/>
 <wire x1="236.22" y1="132.08" x2="238.76" y2="132.08" width="0.1524" layer="91"/>
 <label x="238.76" y="132.08" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$37" class="0">
-<segment>
-<pinref part="SV2" gate="1" pin="3"/>
-<wire x1="236.22" y1="147.32" x2="238.76" y2="147.32" width="0.1524" layer="91"/>
-<label x="238.76" y="147.32" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="ALERT-3" class="0">
