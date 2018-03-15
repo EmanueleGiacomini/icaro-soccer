@@ -1,0 +1,24 @@
+#include<math.h>
+#include <Adafruit_ADS1015.h>
+
+class Slinea
+{
+int _pippo[4];
+Adafruit_ADS1015 _ads;
+
+ public:
+   Slinea(){}
+   void inizializza()
+   {
+     _ads.begin();
+   }
+   void leggiLinee()
+     {
+       for(ini i=0;i<3;i++)
+       {
+         pippo[i]=_ads.readADC_SingleEnded(i);
+       }
+     }
+
+
+}
