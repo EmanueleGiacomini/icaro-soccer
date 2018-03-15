@@ -30,7 +30,7 @@ class Robot
   }
   void pidOutput()
   {
-    piattaforma.ruota(_output);
+    _piattaforma->ruota(_output);
   }
 
 }
