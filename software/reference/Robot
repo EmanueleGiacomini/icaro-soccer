@@ -1,0 +1,36 @@
+#include<math.h>
+#include "motlib.h"
+#include <PID_v1.h>
+class Robot
+{
+  float _pointD; //direzione robot
+  double _setpoint,_input,_output;
+  double _kp=0.5, _ki=1, _kd=1;
+  PID myPID(&_input, &_output, &_setpoint, _kp, _ki, _kd, DIRECT);
+  Piattaforma* _piattaforma;
+  Adafruit_BNO055 bno* _adafruit_BNO055bno;
+  Line Handler* _lineHandler;
+  Pixy* _pixy;
+  public:
+  Robot(){}
+  void inizializza(Piattaforma* piattaforma, Adafruit_BNO055 bno* adafruit_BNO055bno, Line Handler* lineHandler, Pixy* pixy)
+  {
+    _piattaforma  = piattaforma;
+    _adafruit_BNO055bno = adafruit_BNO055bno;
+    _lineHandler = lineHandler;
+    _pixy = pixy;
+    myPID.SetMode(AUTOMATIC);fd
+    myPID.SetOutputLimits(-255, 255);
+    myPID.SetSampleTime(20);
+
+  }
+  void leggiBussola ()
+  {
+    _pointD = digitalRead(circConstraint(event.orientation.x,-180,180));
+  }
+  void pidOutput()
+  {
+    piattaforma.ruota(_output);
+  }
+
+}
