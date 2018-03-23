@@ -5,5 +5,8 @@
 #ifndef robot_h
 #define robot_h
 
+struct Robot{
+
+};
 
 #endif
