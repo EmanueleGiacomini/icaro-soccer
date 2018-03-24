@@ -9,11 +9,24 @@
 #include "motlib.h"
 
 static double toRad(double  deg) {
-  return (deg * 71 ) / 4068;
+   return (deg * 71 ) / 4068;
 }
 
 static double toDeg(int rad) {
-  return ( rad * 4068 ) / 71;
+   return ( rad * 4068 ) / 71;
+}
+
+static float circConstraint(float f, int min, int max) {
+  int intervallo = max-min;
+  if(f<min)
+  {
+    f+=intervallo;
+  }
+  if(f>max)
+  {
+    f-=intervallo;
+  }
+  return f;
 }
 
 Motore::Motore() {
