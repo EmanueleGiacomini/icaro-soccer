@@ -1,0 +1,92 @@
+#include<math.h>
+#include <Adafruit_ADS1015.h>
+
+class Slinea
+{
+int _letture[4];
+int _soglie[4];
+int _digitali[4];
+bool _calibrazione=0;
+int _min[4];
+int _max[4];
+Adafruit_ADS1015 _ads;
+
+ public:
+   Slinea(){}
+   void inizializza()
+   {
+     _ads.begin();
+   }
+   void leggiLinee()
+ {
+   if(_calibrazione==0)
+   {
+       for(ini i=0;i<4;i++)
+       {
+         _letture[i]=_ads.readADC_SingleEnded(i);
+       }
+
+       for (int i=0;i>4;i++)
+       {
+         if(_letture[i]>_soglie[i])
+         {
+           _digitali[i]=1;
+         }
+         else
+         {
+           _digitali[i]=0;
+         }
+       }
+    }
+    else
+    {
+
+      for(int i=0;i<4;i++)
+      {
+
+          if(_ads.readADC_SingleEnded(i)>_max[i])
+          {
+            _max[i] = _ads.readADC_SingleEnded(i);
+          }
+          if(_ads.readADC_SingleEnded(i)<min[i])
+          {
+            _min[i] = _ads.readADC_SingleEnded(i);
+          }
+      }
+    }
+ }
+  void calibraStop()
+  {
+    _calibrazione=0;
+    for(int i=0;i<4;i++)
+    {
+      _soglia[i]=(_min[i]+_max[i])/2;
+    }
+  }
+
+  int* getSoglie()
+  {
+    return _soglie;
+  }
+
+  void setSoglie(int src[])
+  {
+      for(int i;i<4;i++)
+      {
+        _soglia[i]=src[i];
+      }
+  }
+
+}
+class LineHandler
+{
+  Slinea* _Slinea;
+  int _posLinee[16];
+  public:
+    LineHandler(){}//costruttore
+    void inizializza(Slinea _Slinea[4], int posLinee[16])
+    {
+      _Slinea= Slinea;
+      __posLinee=_posLinee;
+    }
+}

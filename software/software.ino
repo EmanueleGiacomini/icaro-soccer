@@ -1,4 +1,3 @@
-
 #include "src/motlib.h"
 
 Motore motori[4];
