@@ -18,7 +18,7 @@ class LineSensor
 {
 
 int _soglie[4];//array soglie
-int _output[4];//outuput
+int _output[4];//output
 bool _calibrazione=0; //flag
 int *_pass;//array dove metto l'angolo che indica la posizione di ciascun sensore
 int *src;//source
@@ -119,23 +119,29 @@ class LineHandler
 {
   bool _escapeflag = 0; // Flag di avviso rilevazione linea.
   int _escape_dir;  // Traiettoria di fuga
-  //EmanueleG: a cosa serve questa variabile ?
-  int _dir; //traiettoria
   unsigned int _ttl;// Time-To-Live della traiettoria di fuga
    LineSensor * _LineSensor;//LineSensor
-//  int _posLinee[16];
+   int _posLinee[16];
+   int num_linee=0;
+   int letture[4];
 
-  //EmanueleG: Dovresti completare queste due funzioni:
-  void attivaCorrezione(int dir) {
+  void attivaCorrezione(int dir)
+  {
+    _escapeflag=true;
     // porta escape_flag a 1
+    _escape_dir=dir;
     // imposta la direzione di fuga a dir
   }
 
-  void reset() {
+  void reset()
+  {
+    _escapeflag=false;
     // Resetta escape_flag a 0
+
     // imposta ttl a
+        //SaraU:a cosa?
   }
-  
+
   public:
     LineHandler(){}//costruttore
     voidupdateTTL(){}
@@ -145,12 +151,8 @@ class LineHandler
 
     }
     void elabora();
-    {
-      int num_linee=0;
-      int letture[4];
+  {
 
-      //EmanueleG: Visto che queste variabili devono permanere anche dopo la fine
-      //della funzione, spostale nelle variabili private dell'oggetto
       double sommaX=0;
       double sommaY=0;
       double line_live[4][4];
@@ -164,26 +166,24 @@ class LineHandler
         {
           if(letture[j] != -1)
           {
-            //EmanueleG: Qui stai aumentato il numero di sensori che vedono la
-            //linea, prima di controllare se il sensore ha gia visto la linea
-            num_linee++;
-            //EmanueleG: Non e' necessario controllare il TTL in questo momento
-            getTTL();
-
-            //EmanueleG: Occhio che letture e' un array e non una matrice,
-            // l'indice i e' inutile su letture perche' implicitamente stiamo
-            // controllando il sensore i-esimo
-            if(line_live[i][j] != letture[i][j])
+            if(line_live[i][j] != letture[j])
             {
-              //EmanueleG: _escapeflag dovrebbe diventare 'true' non 'false'!
-              // Prima di attivare la flag inoltre, calcolati la direzione
-              // di fuga.
-              _escapeflag = false;
-              line_live[i][j]=letture[i][j];
-              getTTL();
+              num_linee++;
+
+              double angolo = (letture[j]* 71 ) / 4068;//conversione in radianti
+              sommaX+=cos(angolo);
+              //cosa+cos0+cosb;
+              sommaY+=sin(angolo);
+              //sina+sin0+sinb;
+
+              _escape_dir=atan2(sommaY, sommaX);
+              _escape_dir=(_escape_dir * 4068)/71;
+              _escape_dir=circConstraint(escape_dir + 180, 0, 360);
+
+              _escapeflag=true;
+
             }
-            //EmanueleG: Puoi riscrivere questa parte nella funzione reset che
-            // hai scritto prima.
+
             if(!_ttl)
             {
               for(int z=0;z<4;z++)
@@ -194,13 +194,6 @@ class LineHandler
                 }
               }
             }
-            //EmanueleG: Il calcolo della nuova direzione va' fatto SOLO se
-            // il sensore attuale non ha gia visto la linea
-            double angolo = (letture[j]* 71 ) / 4068;//conversione in radianti
-            sommaX+=cos(angolo);
-            //cosa+cos0+cosb;
-            sommaY+=sin(angolo);
-            //sina+sin0+sinb;
           }
         }
       }
@@ -210,25 +203,19 @@ class LineHandler
          _escape_dir=(_escape_dir * 4068)/71;
          _escape_dir=circConstraint(escape_dir + 180, 0, 360);
       }
-    }
+  }
 
     int getStatus();
     {
       return _escapeflag;
     }
-    /**
-     * Interroga la classe per conoscere lo status di _escapeflag
-     * @return valore di _escapeflag
-     */
+
     int getDirezioneFuga()
     {
       return _escape_dir;
     }
-    /**
-     * Restituisce un valore utile solo se _escapeflag e' attiva.
-     * @return _escape_dir
-     */
-    unsigned int getTTL();
+
+    unsigned int getTTL();//non ho capito come devo modificarla
     {
       //EmanueleG: Sarebbe carino sfruttare i millis per aggiornare _ttl !
       // Leggiti l'esempio in digital/blinkwithoutdelay per capire di cosa parlo
@@ -239,7 +226,4 @@ class LineHandler
       }
       return _ttl;
     }
-    /**
-     * @return il valore di _ttl
-     */
 };
