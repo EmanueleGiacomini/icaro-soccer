@@ -152,6 +152,8 @@ class LineHandler
                 line_live[z][y]=-1;
               }
             }
+        sommaX=0;
+        sommaY=0;
   }
 
   public:
