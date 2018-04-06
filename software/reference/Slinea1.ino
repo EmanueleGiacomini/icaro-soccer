@@ -115,6 +115,10 @@ Adafruit_ADS1015 _ads;
   }
 
 }
+
+// Guarda qui
+#define TTL_STANDARD 3000
+
 class LineHandler
 {
   bool _escapeflag = 0; // Flag di avviso rilevazione linea.
@@ -140,6 +144,10 @@ class LineHandler
 
     // imposta ttl a
         //SaraU:a cosa?
+          //EmanueleG: a un valore standard ( guarda sopra LineHandler )
+          //_ttl = TTL_STANDARD;
+    
+    //EmanueleG: In oltre, facciamo resettare a questa funzione, la matrice dei sensori visti
   }
 
   public:
@@ -152,7 +160,8 @@ class LineHandler
     }
     void elabora();
   {
-
+      //EmanueleG: quello che intendevo e' che queste variabili devono stare fuori da elabora perche' devono
+      // rimanere anche dopo l'esecuzione di elabora (impostale come variabili private ) 
       double sommaX=0;
       double sommaY=0;
       double line_live[4][4];
@@ -183,7 +192,7 @@ class LineHandler
               _escapeflag=true;
 
             }
-
+            //EmanueleG: Da spostare in reset senza ovviamente il primo if(!_ttl)
             if(!_ttl)
             {
               for(int z=0;z<4;z++)
@@ -197,6 +206,7 @@ class LineHandler
           }
         }
       }
+      //EmanueleG: Ovviamente questo lo puoi togliere perche' calcoli la nuova direzione gia precedentemente
       if(num_linee>0)//qunado incontro almeno un sensore sulla linea
       {
          _escape_dir=atan2(sommaY, sommaX);
@@ -219,6 +229,11 @@ class LineHandler
     {
       //EmanueleG: Sarebbe carino sfruttare i millis per aggiornare _ttl !
       // Leggiti l'esempio in digital/blinkwithoutdelay per capire di cosa parlo
+      
+      //EmanueleG: Per aggiornare il TTL, voglio utilizzare la funzione millis in questo modo:
+      // mi salvo l'istante in cui la flag viene attivata (chiamandola per esempio _flag_millis )
+      // Quando chiamo getTTL, modifico ttl in questo modo: _ttl = ( TTL_STANDARD - ( millis() - _flag_millis ))
+      // Se ora _ttl e' > 0 lo restituisco normalmente, mentre se _ttl <= 0 allora abbasso la flag.
       _ttl--;
       if(!_ttl)
       {
