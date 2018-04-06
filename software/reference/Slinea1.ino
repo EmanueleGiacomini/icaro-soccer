@@ -128,7 +128,9 @@ class LineHandler
    int _posLinee[16];
    int num_linee=0;
    int letture[4];
-
+   double sommaX=0;
+   double sommaY=0;
+   double line_live[4][4];
   void attivaCorrezione(int dir)
   {
     _escapeflag=true;
@@ -140,14 +142,16 @@ class LineHandler
   void reset()
   {
     _escapeflag=false;
-    // Resetta escape_flag a 0
 
-    // imposta ttl a
-        //SaraU:a cosa?
-          //EmanueleG: a un valore standard ( guarda sopra LineHandler )
-          //_ttl = TTL_STANDARD;
-    
-    //EmanueleG: In oltre, facciamo resettare a questa funzione, la matrice dei sensori visti
+    _ttl=TTL_STANDARD;
+
+            for(int z=0;z<4;z++)
+            {
+              for(int y=0;y<4;y++)
+              {
+                line_live[z][y]=-1;
+              }
+            }
   }
 
   public:
@@ -160,13 +164,6 @@ class LineHandler
     }
     void elabora();
   {
-      //EmanueleG: quello che intendevo e' che queste variabili devono stare fuori da elabora perche' devono
-      // rimanere anche dopo l'esecuzione di elabora (impostale come variabili private ) 
-      double sommaX=0;
-      double sommaY=0;
-      double line_live[4][4];
-      /////////////////////////////////
-
       for(int i=0;i<4;i++)
       {
         ls[i]->leggiLinea();
@@ -192,26 +189,8 @@ class LineHandler
               _escapeflag=true;
 
             }
-            //EmanueleG: Da spostare in reset senza ovviamente il primo if(!_ttl)
-            if(!_ttl)
-            {
-              for(int z=0;z<4;z++)
-              {
-                for(int y=0;y<4;y++)
-                {
-                  line_live[z][y]=-1;
-                }
-              }
-            }
           }
         }
-      }
-      //EmanueleG: Ovviamente questo lo puoi togliere perche' calcoli la nuova direzione gia precedentemente
-      if(num_linee>0)//qunado incontro almeno un sensore sulla linea
-      {
-         _escape_dir=atan2(sommaY, sommaX);
-         _escape_dir=(_escape_dir * 4068)/71;
-         _escape_dir=circConstraint(escape_dir + 180, 0, 360);
       }
   }
 
@@ -225,20 +204,27 @@ class LineHandler
       return _escape_dir;
     }
 
-    unsigned int getTTL();//non ho capito come devo modificarla
+    unsigned int getTTL(unsigned int _flag_millis)
     {
       //EmanueleG: Sarebbe carino sfruttare i millis per aggiornare _ttl !
       // Leggiti l'esempio in digital/blinkwithoutdelay per capire di cosa parlo
-      
+
       //EmanueleG: Per aggiornare il TTL, voglio utilizzare la funzione millis in questo modo:
       // mi salvo l'istante in cui la flag viene attivata (chiamandola per esempio _flag_millis )
       // Quando chiamo getTTL, modifico ttl in questo modo: _ttl = ( TTL_STANDARD - ( millis() - _flag_millis ))
       // Se ora _ttl e' > 0 lo restituisco normalmente, mentre se _ttl <= 0 allora abbasso la flag.
-      _ttl--;
-      if(!_ttl)
+      _ttl=(TTL_STANDARD-(millis()-_flag_millis))
+
+      if(_ttl<=0)
       {
         _escapeflag = false;
+        _flag_millis=0;
+        return  _flag_millis;
       }
-      return _ttl;
+      else
+      {
+        return _ttl;
+      }
+
     }
 };
