@@ -28,6 +28,8 @@
 #ifndef veclib_h
 #define veclib_h
 
+void vecSet(int* vec, int dim, int n);
+void vecCpy(int* src, int* dest, int dim);
 int vecScalarMult(int A[], int B[], int dim);
 void vecMult(int A[], int B[], int dim);
 void vecSub(int A[], int B[], int dim);
@@ -40,5 +42,7 @@ void vecSum(int A[], int B[], int dim);
     3) Moltiplicazione per un numero  (nome consigliato: vecScalarMult)
     4) Moltiplicazione fra vettori (un po' complessa)  (nome consigliato: vecMult)
 */
+
+void matSet(int** m, int dim, int n);
 
 #endif
