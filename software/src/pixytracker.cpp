@@ -17,8 +17,8 @@ int PixyTracker::getPixyData() {
      * 
      * @return int numero di blocchi attualmente visibili
      */
-
-    return 0;
+    _blocks= pixy.getBlocks();
+    return _blocks;
 }
     
 bool PixyTracker::findBall() {
@@ -28,9 +28,19 @@ bool PixyTracker::findBall() {
      * @return true la signature della palla e' stata riconosciuta
      * @return false altrimenti
      */
-
-    return false;
+   for (int i=0; i<_blocks; i++){
+   
+	if (_pixy.blocks[i]==BALL_SIGNATURE){
+     _bal_x= _pixy.blocks[i].x;
+     _bal_y= _pixy.blocks[i].y;
+	 _ball_flag=true;
+	 return true;
+	}
+  }
+  _ball_flag=false;
+  return false; 
 }
+
     
 bool PixyTracker::findGoal() {
     /**
@@ -42,10 +52,25 @@ bool PixyTracker::findGoal() {
      * @return true una delle signature e' stata riconosciuta
      * @return false altrimenti
      */
-
-    return false;
+ for (int i=0; i<_blocks; i++){
+  if (_pixy.blocks[i]==EGOAL_SIGNATURE){
+    _goal_x= _pixy.blocks[i].x;
+    _goal_y= _pixy.blocks[i].y;
+	_egoal_flag=true;
+	 return true;	
+	}
+	
+  if (_pixy.blocks[i]==FGOAL_SIGNATURE){
+    _goal_x= _pixy.blocks[i].x;
+    _goal_y= _pixy.blocks[i].y;
+	_fgoal_flag=true;
+	return true;		
+	}
+  }
+  _fgoal_flag=false;
+  _egoal_flag=false;
+  return false;
 }
-
 PixyTracker::PixyTracker() {
 
 }
@@ -54,12 +79,16 @@ void PixyTracker::inizializza() {
     /**
      * @brief Inizializza la comunicazione con PixyCam
      */
+     pixy.init();
 }
     
 void PixyTracker::elabora() {
     /**
      * @brief Interroga Pixy e cerca nella risposta eventuali elementi importanti (palla, porte)
      */
+   getPixyData(); 
+   findBall();
+   findGoal();
 }
     
 bool PixyTracker::getBallStatus() {
@@ -69,8 +98,8 @@ bool PixyTracker::getBallStatus() {
      * @return true Se la palla e' nel raggio visivo della Pixy
      * @return false altrimenti
      */
-
-    return false;
+   
+   return ball_flag;
 }
     
 bool PixyTracker::getEGoalStatus() {
@@ -80,8 +109,8 @@ bool PixyTracker::getEGoalStatus() {
      * @return true Se la porta nemica e' nel raggio visivo della Pixy
      * @return false altrimenti
      */
-
-    return false;
+   
+   return _egoal_flag;
 }
     
 bool PixyTracker::getFGoalStatus() {
@@ -91,8 +120,7 @@ bool PixyTracker::getFGoalStatus() {
      * @return true Se la porta alleata e' nel raggio visivo della Pixy 
      * @return false altrimenti
      */
-
-    return false;
+   return _fgoal_flag;
 }
 
 
@@ -103,7 +131,7 @@ uint16_t PixyTracker::getBallX() {
      * 
      * @return uint16_t 
      */
-
+    return _ball_x;
     return false;
 }
     
@@ -113,7 +141,7 @@ uint16_t PixyTracker::getBallY() {
      * 
      * @return uint16_t 
      */
-
+    return _ball_y;
     return false;
 }
     
@@ -127,7 +155,7 @@ uint16_t PixyTracker::getGoalX() {
      * 
      * @return uint16_t 
      */
-
+    return _goal_x;
     return false;
 }
     
@@ -141,6 +169,6 @@ uint16_t PixyTracker::getGoalY() {
      * 
      * @return uint16_t 
      */
-
+    return _goal_y;
     return false;
 }

@@ -28,7 +28,8 @@ class PixyTracker {
     uint16_t _ball_x, _ball_y;
     uint16_t _goal_x, _goal_y;
     Pixy _pixy;
-
+    uint8_t _blocks;
+  
     /**
      * @brief Interroga Pixy per sapere quanti oggetti
      * attualmente sono nel suo campo visivo
