@@ -1,5 +1,7 @@
 /**
- * @brief 
+ * @brief PixyTracker e' un interfaccia personalizzata per PixyCam
+ * tramite la quale e' possibile determinare la posizione di palla e 
+ * porte (alleata e nemica).
  * 
  * @file PixyTracker.h
  * @author your name
@@ -20,11 +22,7 @@
 #define FGOAL_SIGNATURE 0x03
 
 class PixyTracker {
-    /**
-     * @brief PixyTracker e' un interfaccia personalizzata per PixyCam
-     * tramite la quale e' possibile determinare la posizione di palla e 
-     * porte (alleata e nemica).
-     */
+
     bool _ball_flag, _egoal_flag, _fgoal_flag;
     //uint16_t : unsigned short (2 byte int)
     uint16_t _ball_x, _ball_y;
