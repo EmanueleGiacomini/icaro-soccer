@@ -1,5 +1,6 @@
 #include "src/motlib.h"
 #include "src/linelib.h"
+#include "src/pixytracker.h"
 
 Motore motori[4];
 int pins[4][3] = {  {15, 22},
