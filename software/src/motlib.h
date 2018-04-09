@@ -11,7 +11,8 @@
 
 #include <Arduino.h>
 #include <math.h>
-//#include "utilib.h"
+#include "veclib.h"
+#include "phoenixutil.h"
 
 
 class Motore {
@@ -40,8 +41,4 @@ public:
   void ruota(double rot);
   void elabora();
 };
-
-
-
-
 #endif

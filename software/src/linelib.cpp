@@ -10,99 +10,129 @@
 
 #include "linelib.h"
 
-LineSensor::LineSensor() {
+/* =================================== LineSensor =================================== */
 
+int LineSensor::readSensor(int index) {
+  if(index >= 0 && index < 4) return _ads.readADC_SingleEnded(index);
+  return -1;
 }
+
+LineSensor::LineSensor(int addr) : _ads(addr) {
+  _calflag = false;
+  vecSet(_output, 4, 0);
+  vecSet(_soglie, 4, 0);
+  vecSet(_min, 4, 0);
+  vecSet(_max, 4, 0);
+}
+
 void LineSensor::inizializza(int* pass) {
-
+  _pass = pass;
+  _ads.begin();
 }
-/**
- * Salva in _output la lettura digitalizzata nel seguente modo:
- * if lettura[i] > soglia[i]:
- *      _output[i] = 1
- * else:
- *      _output[i] = -1
- */
-void LineSensor::leggiLinea() {
 
+void LineSensor::read() {
+  if(_calflag) {
+    // Fase di calibrazione
+    for(int i = 0; i < 4; i++) {
+      int lettura = readSensor(i);
+      if(lettura > _max[i]) _max[i] = lettura;
+      if(lettura < _min[i]) _min[i] = lettura;
+    }    
+  } else {
+    // Fase di creazione output
+    for(int i = 0; i < 4; i++) {
+      if(readSensor(i) > _soglie[i]) _output[i] = _pass[i];
+      else _output[i] = -1;
+    }
+  }
 }
-/**
- * Salva in dest le letture calcolate nel seguente format:
- * if _output[i] != -1:
- *    dest[i] = _pass[i]*_output[i]
- * else:
- *    dest[i] = -1
- * @param  dest Array dove salvare l'output del sensore.
- */
+
 void LineSensor::getOutput(int* dest) {
-
+  vecCpy(_output, dest, 4);
 }
-/**
- * Attiva la flag di calibrazione
- */
+
 void LineSensor::calibraStart() {
-
+  _calflag = true;
 }
-/**
- * Disattiva la flag di calibrazione e calcola le soglie
- * tramite le letture effettuate.
- */
+
 void LineSensor::calibraStop() {
-
+  // Calcolo soglie
+  for(int i = 0; i < 4; i++) {
+    _soglie[i] = (_max[i] + _min[i]) / 2;
+  }
+  _calflag = false;
 }
-/**
- * Copia le soglie da src (dim=4) in _soglie
- */
+
 void LineSensor::setSoglie(int* src) {
-
+  vecCpy(src, _soglie, 4);
 }
-/**
- * Salva in dest gli elementi di _soglie
- * @param  dest Array dove salvare le soglie.
- */
+
 void LineSensor::getSoglie(int* dest) {
-
+  vecCpy(_soglie, dest, 4);
 }
 
+/* =================================== LineHandler =================================== */
+
+void LineHandler::updateTTL() {
+  _ttl = (DEFAULT_TTL - (millis() - _line_millis));
+}
+
+void LineHandler::reset() {
+  _ttl = DEFAULT_TTL;
+  _escapeflag = false;
+  matSet((int**)_sensori_visti, 4, 0);
+  _somma_x = 0;
+  _somma_y = 0;
+}
+
+
+void LineHandler::correggi(int dir) {
+  _ttl = DEFAULT_TTL;
+  _line_millis = millis();
+  _escapeflag = true;
+  _escape_dir = dir;
+}
 
 LineHandler::LineHandler() {
 
 }
 
-void LineHandler::updateTTL() {
-
-}
-
 void LineHandler::inizializza(LineSensor* ls) {
-
+  _ls = ls;
 }
-/**
- * Richiede i dati dai sensori collegati, cerca i pattern di linee
- * ed aggiorna eventualmente le variabili di fuga (_escapeflag, _escape_dir, _ttl)
- * Il format per riconsocere un pattern di linea e' descritto nel file
- * /icaro-soccer/software/reference/Tesina_2.pdf [pag=39, sez=2.3.6 ]
- */
+
 void LineHandler::elabora() {
+  int letture[4];
+  for(int i = 0; i < 4; i++) {
+    _ls->read();
+    _ls->getOutput(letture);
+    for(int j = 0; j < 4; j++) {
+      if(letture[j] != -1) {
+        // Un sensore ha rilevato la linea.
+        if(_sensori_visti[i][j] != -1) {
+          // Il sensore non e' stato considerato precedentemente
+          _sensori_visti[i][j] = 1;
+          double rad_pos = toRad(letture[j]);
+          _somma_x += cos(rad_pos);
+          _somma_y += sin(rad_pos);
 
+          int computed_dir = atan2(_somma_y, _somma_x);
+          computed_dir = circConstraint(toDeg(computed_dir) + 180, 0, 360);
+          correggi(computed_dir);
+        }
+      }
+    }
+  }
 }
-/**
- * Interroga la classe per conoscere lo status di _escapeflag
- * @return valore di _escapeflag
- */
-int LineHandler::getStatus() {
 
+int LineHandler::getFlag() {
+  return _escapeflag;
 }
-/**
- * Restituisce un valore utile solo se _escapeflag e' attiva.
- * @return _escape_dir
- */
+
 int LineHandler::getDirezioneFuga() {
-  return -1;
+  return _escape_dir;
 }
 
-/**
- * @return il valore di _ttl
- */
-unsigned int LineHandler::getTTL() {
-  return 0;
+int LineHandler::getTTL() {
+  return _ttl;
 }
