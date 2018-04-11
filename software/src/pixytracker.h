@@ -25,8 +25,8 @@ class PixyTracker {
 
     bool _ball_flag, _egoal_flag, _fgoal_flag;
     //uint16_t : unsigned short (2 byte int)
-    uint16_t _ball_x, _ball_y;
-    uint16_t _goal_x, _goal_y;
+    uint16_t _ball_x, _ball_y, _ball_h, _ball_w;
+    uint16_t _goal_x, _goal_y, _goal_h, _goal_w;
     Pixy _pixy;
     uint8_t _blocks;
   
@@ -100,6 +100,18 @@ public:
      */
     uint16_t getBallY();
     /**
+     * @brief Restituisce l'altezza della palla
+     * 
+     * @return uint16_t 
+     */
+    uint16_t getBallHeight();
+    /**
+     * @brief Restituisce la larghezza della palla
+     * 
+     * @return uint16_t 
+     */
+    uint16_t getBallWidth();
+    /**
      * @brief Restituisce la coordinata X della porta
      * NB: Le coordinate ( X, Y ) della porta, si riferiscono
      * a una delle due porte correntemente visibili dalla Pixy,
@@ -119,6 +131,18 @@ public:
      * @return uint16_t 
      */
     uint16_t getGoalY();    
+    /**
+     * @brief Restituisce l'altezza della porta
+     * 
+     * @return uint16_t 
+     */
+    uint16_t getGoalHeight();
+    /**
+     * @brief Restituisce la larghezza della porta
+     * 
+     * @return uint16_t 
+     */
+    uint16_t getGoalWidth();
 };
 
 #endif

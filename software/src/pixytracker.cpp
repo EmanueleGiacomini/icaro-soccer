@@ -17,7 +17,7 @@ int PixyTracker::getPixyData() {
      * 
      * @return int numero di blocchi attualmente visibili
      */
-    _blocks= pixy.getBlocks();
+    _blocks = _pixy.getBlocks();
     return _blocks;
 }
     
@@ -30,9 +30,11 @@ bool PixyTracker::findBall() {
      */
    for (int i=0; i<_blocks; i++){
    
-	if (_pixy.blocks[i]==BALL_SIGNATURE){
-     _bal_x= _pixy.blocks[i].x;
-     _bal_y= _pixy.blocks[i].y;
+	if (_pixy.blocks[i].signature==BALL_SIGNATURE){
+     _ball_x= _pixy.blocks[i].x;
+     _ball_y= _pixy.blocks[i].y;
+     _ball_w = _pixy.blocks[i].width;
+     _ball_h = _pixy.blocks[i].height;
 	 _ball_flag=true;
 	 return true;
 	}
@@ -53,16 +55,20 @@ bool PixyTracker::findGoal() {
      * @return false altrimenti
      */
  for (int i=0; i<_blocks; i++){
-  if (_pixy.blocks[i]==EGOAL_SIGNATURE){
+  if (_pixy.blocks[i].signature==EGOAL_SIGNATURE){
     _goal_x= _pixy.blocks[i].x;
     _goal_y= _pixy.blocks[i].y;
+    _goal_h = _pixy.blocks[i].height;
+    _goal_w = _pixy.blocks[i].width;
 	_egoal_flag=true;
 	 return true;	
 	}
 	
-  if (_pixy.blocks[i]==FGOAL_SIGNATURE){
+  if (_pixy.blocks[i].signature==FGOAL_SIGNATURE){
     _goal_x= _pixy.blocks[i].x;
     _goal_y= _pixy.blocks[i].y;
+    _goal_h = _pixy.blocks[i].height;
+    _goal_w = _pixy.blocks[i].width;
 	_fgoal_flag=true;
 	return true;		
 	}
@@ -79,7 +85,7 @@ void PixyTracker::inizializza() {
     /**
      * @brief Inizializza la comunicazione con PixyCam
      */
-     pixy.init();
+    _pixy.init();
 }
     
 void PixyTracker::elabora() {
@@ -99,7 +105,7 @@ bool PixyTracker::getBallStatus() {
      * @return false altrimenti
      */
    
-   return ball_flag;
+   return _ball_flag;
 }
     
 bool PixyTracker::getEGoalStatus() {
@@ -132,7 +138,6 @@ uint16_t PixyTracker::getBallX() {
      * @return uint16_t 
      */
     return _ball_x;
-    return false;
 }
     
 uint16_t PixyTracker::getBallY() {
@@ -142,7 +147,24 @@ uint16_t PixyTracker::getBallY() {
      * @return uint16_t 
      */
     return _ball_y;
-    return false;
+}
+
+uint16_t PixyTracker::getBallHeight() {
+    /**
+     * @brief Restituisce l'altezza della palla
+     * 
+     * @return uint16_t 
+     */
+    return _ball_h;
+}
+    
+uint16_t PixyTracker::getBallWidth() {
+    /**
+     * @brief Restituisce la larghezza della palla
+     * 
+     * @return uint16_t 
+     */
+    return _ball_w;
 }
     
 uint16_t PixyTracker::getGoalX() {
@@ -156,7 +178,6 @@ uint16_t PixyTracker::getGoalX() {
      * @return uint16_t 
      */
     return _goal_x;
-    return false;
 }
     
 uint16_t PixyTracker::getGoalY() {
@@ -170,5 +191,22 @@ uint16_t PixyTracker::getGoalY() {
      * @return uint16_t 
      */
     return _goal_y;
-    return false;
+}
+
+uint16_t PixyTracker::getGoalHeight() {
+    /**
+     * @brief Restituisce l'altezza della porta
+     * 
+     * @return uint16_t 
+     */
+    return _goal_h;
+}
+    
+uint16_t PixyTracker::getGoalWidth() {
+    /**
+     * @brief Restituisce la larghezza della porta
+     * 
+     * @return uint16_t 
+     */
+    return _goal_w;
 }
