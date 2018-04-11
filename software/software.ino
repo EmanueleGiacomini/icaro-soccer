@@ -1,6 +1,7 @@
 #include "src/motlib.h"
 #include "src/linelib.h"
 #include "src/pixytracker.h"
+#include "src/phoeniximu.h"
 
 Motore motori[4];
 int pins[4][3] = {  {15, 22},
@@ -20,12 +21,7 @@ void setup()  {
 }
 
 void loop() {
-
-  static int dir = 0;
-  robot.move(dir++);
-  robot.setVel(100);
-  robot.ruota(0);
   robot.elabora();
-  delay(100);
+  if(!robot.trackBall())
 
 }
