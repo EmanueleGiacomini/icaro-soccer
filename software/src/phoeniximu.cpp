@@ -19,7 +19,7 @@ bool PhoenixImu::inizializza()
  * @brief inizializza la comunicazione con l'IMU
  *
  */
-return _bno.begin;
+return _bno.begin();
 }
 
 void PhoenixImu::elabora()
@@ -30,7 +30,7 @@ void PhoenixImu::elabora()
     */
     sensors_event_t event;
     // event -> orientation.x -> heading
-    bno.getEvent(&event);
+    _bno.getEvent(&event);
     _heading=circConstraint(event.orientation.x,-180,180);
 
 }

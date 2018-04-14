@@ -6,7 +6,7 @@
 Motore motori[4];
 int pins[4][3] = {  {15, 22},
                     {14, 20},
-                    {12, 6},
+                    {12, 6},       //controlla i pin
                     {11, 9} };
 Piattaforma robot;
 LineSensor s(0x55);
@@ -24,22 +24,26 @@ void setup()  {
     s.inizializza(angoli);
 
     pixy.inizializza();                        //inizializzo l'oggetto PixiTraker
-
+    robot.setVel(100);
 }
 
 void loop() {
 
-  static bool stato_prec = 0;
-  pixy.elabora();
-  bool stato = pixy.getBallStatus();
+//  static bool stato_prec = 0;
+//  pixy.elabora();
+//  bool stato = pixy.getBallStatus();
+//
+//  if(stato_prec != stato && stato == 1) {      //controllo se ci sono variazioni nello stato della pixy
+//    Serial.println("Visto palla");             //se lo stato è 1 la palla è stata trovata
+//  }
+//
+//  if(stato_prec != stato && stato == 0) {     //se lo stato è 0 la palla è uscita dalla visuale della pixy
+//    Serial.println("Perso palla");
+//  }
+//
+//  stato_prec = stato;
+ robot.move(90);
+ robot.elabora();
 
-  if(stato_prec != stato && stato == 1) {      //controllo se ci sono variazioni nello stato della pixy
-    Serial.println("Visto palla");             //se lo stato è 1 la palla è stata trovata
-  }
 
-  if(stato_prec != stato && stato == 0) {     //se lo stato è 0 la palla è uscita dalla visuale della pixy
-    Serial.println("Perso palla");
-  }
-
-  stato_prec = stato;
 }
