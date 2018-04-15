@@ -2,44 +2,39 @@
 #include "src/linelib.h"
 #include "src/pixytracker.h"
 #include "src/phoeniximu.h"
+#include "src/phoenixrobot.h"
+
+#define BNO055_SAMPLERATE_DELAY_MS (100)
 
 Motore motori[4];
 int pins[4][3] = {  {15, 22},
                     {14, 20},
-                    {12, 6},
-                    {11, 9} };
-Piattaforma robot;
+                    {5, 6},       
+                    {4, 9} };
+Piattaforma p;
 LineSensor s(0x55);
+PhoenixImu bussola;
+LineHandler lh;
+PhoenixRobot robot;
 
 PixyTracker pixy;                              //creazione oggetto PixyTracker
 
-int angoli[4] = {45, 135, 225, 315};
-void setup()  {
+int angoli[4] = {45, 315, 225, 135};
+void setup()  {   
   Serial.begin(9600);
   Serial.println("Seriale inizializzata");
-    for(int i = 0 ; i < 4; i++) {
-      motori[i].inizializza(pins[i][0], pins[i][1]);
-    }
-    robot.inizializza(motori, angoli);
-    s.inizializza(angoli);
-
-    pixy.inizializza();                        //inizializzo l'oggetto PixiTraker
-
+  for(int i = 0 ; i < 4; i++) {
+    motori[i].inizializza(pins[i][0], pins[i][1]);
+  }
+  p.inizializza(motori, angoli);
+  s.inizializza(angoli);
+  bussola.inizializza();
+  pixy.inizializza();                        //inizializzo l'oggetto PixiTraker
+  robot.inizializza(&pixy, &bussola, &lh, &p);
 }
 
 void loop() {
-
-  static bool stato_prec = 0;
-  pixy.elabora();
-  bool stato = pixy.getBallStatus();
-
-  if(stato_prec != stato && stato == 1) {      //controllo se ci sono variazioni nello stato della pixy
-    Serial.println("Visto palla");             //se lo stato è 1 la palla è stata trovata
-  }
-
-  if(stato_prec != stato && stato == 0) {     //se lo stato è 0 la palla è uscita dalla visuale della pixy
-    Serial.println("Perso palla");
-  }
-
-  stato_prec = stato;
+  robot.elabora();
+  robot.trackNorth();
+  delay(100);
 }
