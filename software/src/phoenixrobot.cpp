@@ -8,7 +8,7 @@
 
 #include "phoenixrobot.h"
 
-PhoenixRobot::PhoenixRobot() : _pixy_pid(&_input_pixy, &_output_pixy, &_setpoint_pixy, _kp_pixy, _ki_pixy, _kd_pixy, DIRECT), _imu_pid(&_input_imu, &_output_imu, &_setpoint_imu, _kp_imu, _ki_imu, _kd_imu, DIRECT) {
+PhoenixRobot::PhoenixRobot() : _pixy_pid(&_input_pixy, &_output_pixy, &_setpoint_pixy, 2, 0, 0, DIRECT), _imu_pid(&_input_imu, &_output_imu, &_setpoint_imu, 2, 0, 0, DIRECT) {
 
 }
 
@@ -23,7 +23,6 @@ void PhoenixRobot::inizializza(PixyTracker* pixy, PhoenixImu* imu, LineHandler* 
   _pixy_pid.SetOutputLimits(-255, 255);
   _imu_pid.SetMode(AUTOMATIC);
   _imu_pid.SetOutputLimits(-255, 255);
-  
 
 }
 void PhoenixRobot::elabora()
@@ -57,9 +56,9 @@ void PhoenixRobot::elabora()
     }
     _input_imu = _imu->getHeading();
     _imu_pid.Compute();
-    Serial.println(_output_imu);
     _p->ruota(_output_imu);    
     _p->elabora();
+    Serial.println(_output_imu);
     esit = 1;
     return esit;
   
@@ -103,7 +102,7 @@ void PhoenixRobot::elabora()
       double yHeading= sin(heading);
       double xDirFinale=xHeading;
       double yDirFinale=yHeading-1; 
-      int dirFinale=circConstraint(toDeg(atan2(yDirFinale,xDirFinale)), 0, 360);     
+      int dirFinale=circConstraint(toDeg(atan2(yDirFinale,xDirFinale)), -180, 180);     
       _p->move(dirFinale);
       return true;
     }

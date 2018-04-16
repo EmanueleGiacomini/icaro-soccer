@@ -15,7 +15,6 @@
 #include "motlib.h"
 #include "pixytracker.h"
 #include <PID_v1.h>
-// TODO: Inserire PID
 
 class PhoenixRobot {
 

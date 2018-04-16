@@ -35,6 +35,13 @@ void setup()  {
 
 void loop() {
   robot.elabora();
-  robot.trackNorth();
-  delay(100);
+  if (pixy.getBallStatus()==true)
+  {
+    robot.trackBall();
+  }
+  else
+  {
+    robot.trackNorth();
+  }
+  delay(50);
 }
