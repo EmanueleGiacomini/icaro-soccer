@@ -83,6 +83,13 @@ public:
      * @return false correzione conclusa
      */
     bool  correggiLinea(int dir);
+    /**
+     * @brief Porta la palla in porta avversaria
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool attack();
 };
 
 #endif

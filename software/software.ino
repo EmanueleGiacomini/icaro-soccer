@@ -38,10 +38,19 @@ void loop() {
   if (pixy.getBallStatus()==true)
   {
     robot.trackBall();
+      if(robot.alignBallGoal()==true)
+      {
+       robot.attack();
+      }
   }
   else
   {
     robot.trackNorth();
+    p.ruota(70);
   }
+
+
+
+
   delay(50);
 }
