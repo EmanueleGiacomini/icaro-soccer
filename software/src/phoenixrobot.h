@@ -14,14 +14,29 @@
 #include "linelib.h"
 #include "motlib.h"
 #include "pixytracker.h"
-
-// TODO: Inserire PID
+#include <PID_v1.h>
 
 class PhoenixRobot {
+
     PixyTracker* _pixy;
     PhoenixImu* _imu;
     LineHandler* _lh;
     Piattaforma* _p;
+    PID _pixy_pid;
+    double _output_pixy;
+    double _input_pixy;
+    double _setpoint_pixy=0;
+    double _kp_pixy= 2;
+    double _kd_pixy= 0;
+    double _ki_pixy= 0;
+
+    PID _imu_pid;
+    double _output_imu;
+    double _input_imu;
+    double _setpoint_imu=90;
+    double _kp_imu = 2;
+    double _kd_imu = 0;
+    double _ki_imu = 0;
 public:
     PhoenixRobot();
 
@@ -68,12 +83,13 @@ public:
      * @return false correzione conclusa
      */
     bool  correggiLinea(int dir);
-
-
-
-
-
-
+    /**
+     * @brief Porta la palla in porta avversaria
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool attack();
 };
 
 #endif
