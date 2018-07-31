@@ -1,0 +1,17 @@
+void attaccante()
+{
+
+
+
+
+
+}
+
+void portiere()
+{
+	
+
+
+
+
+}
